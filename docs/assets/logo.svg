@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="256" height="256" viewBox="0 0 256 256"
+     role="img" aria-label="CDKIT">
+  <defs>
+    <linearGradient id="blue"
+                    x1="20" y1="0" x2="236" y2="256"
+                    gradientUnits="userSpaceOnUse">
+      <stop stop-color="#369DF5"/>
+      <stop offset=".5" stop-color="#2574E8"/>
+      <stop offset="1" stop-color="#254FC4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256"
+        rx="56" fill="url(#blue)"/>
+
+  <g fill="#FFFFFF">
+    <!-- C -->
+    <path d="M96 44
+             L85 56
+             C80 50 74 48 65 48
+             C50 48 40 57 40 72
+             C40 87 50 96 65 96
+             C74 96 80 93 85 88
+             L96 100
+             C88 108 78 112 64 112
+             C40 112 24 96 24 72
+             C24 48 40 32 64 32
+             C78 32 88 36 96 44Z"/>
+
+    <!-- D -->
+    <path fill-rule="evenodd"
+          d="M112 32
+             H140
+             C168 32 184 47 184 72
+             C184 97 168 112 140 112
+             H112Z
+
+             M128 48
+             V96 H140
+             C158 96 168 88 168 72
+             C168 56 158 48 140 48Z"/>
+
+    <!-- K -->
+    <path d="M48 144
+             H64 V176
+             L90 144 H112
+             L79 184
+             L114 224 H92
+             L64 192
+             V224 H48Z"/>
+
+    <!-- I -->
+    <path d="M128 144 H144 V224 H128Z"/>
+
+    <!-- T -->
+    <path d="M160 144
+             H232 V160
+             H204 V224
+             H188 V160
+             H160Z"/>
+
+    <!-- Star accent, enlarged 1.5x -->
+    <path d="M216 36
+             C219 52.5 223.5 57 240 60
+             C223.5 63 219 67.5 216 84
+             C213 67.5 208.5 63 192 60
+             C208.5 57 213 52.5 216 36Z"/>
+  </g>
+</svg>
