@@ -56,6 +56,11 @@
       font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      overflow-x: clip;
+    }
+
+    body.modal-open {
+      overflow: hidden;
     }
 
     img {
@@ -70,9 +75,20 @@
     }
 
     .wrap {
+      width: 100%;
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 24px;
+    }
+
+    section[id],
+    main[id] {
+      scroll-margin-top: 86px;
+    }
+
+    :where(a, button, summary, [tabindex]):focus-visible {
+      outline: 2px solid var(--ember);
+      outline-offset: 3px;
     }
 
     .serif {
@@ -153,6 +169,9 @@
     .menu-btn {
       display: none;
       margin-left: auto;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
       background: none;
       border: 1px solid var(--line-strong);
       color: var(--text);
@@ -233,16 +252,26 @@
       opacity: .9;
     }
 
-    #embers {
+    .hero-bg {
       position: absolute;
       inset: 0;
       z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+      contain: layout paint;
+    }
+
+    #embers {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: none;
       pointer-events: none;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 60px;
       text-align: center;
     }
@@ -250,13 +279,20 @@
     .badge {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
+      max-width: 100%;
       padding: 6px 15px 6px 6px;
       border-radius: 999px;
       background: #000000;
       font-size: 14px;
       color: var(--muted);
       backdrop-filter: blur(8px);
+    }
+
+    .badge > span:last-child {
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .badge b {
@@ -314,10 +350,15 @@
 
     .window {
       position: relative;
+      min-width: 0;
       border-radius: 16px;
       overflow: hidden;
       background: #141011;
       border: 1px solid var(--line-strong);
+    }
+
+    .window img {
+      width: 100%;
     }
 
     .hero-shot {
@@ -327,7 +368,7 @@
     /* ---------- stats ---------- */
     .stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--surface);
@@ -390,7 +431,7 @@
     /* features */
     .features {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -419,7 +460,8 @@
       border-color: var(--line-strong);
     }
 
-    .card:hover::before {
+    .card:hover::before,
+    .card.spotlight-active::before {
       opacity: 1;
     }
 
@@ -451,12 +493,14 @@
     .card.wide {
       grid-column: span 2;
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
       gap: 28px;
       align-items: center;
     }
 
     .card.wide img {
+      width: 100%;
+      min-width: 0;
       border-radius: 12px;
       border: 1px solid var(--line);
       cursor: zoom-in;
@@ -500,7 +544,7 @@
 
     .stage {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
       gap: 35px;
       align-items: center;
     }
@@ -549,7 +593,7 @@
     /* steps */
     .steps {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
       counter-reset: step;
     }
@@ -595,7 +639,7 @@
     /* split */
     .split {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 56px;
       align-items: center;
     }
@@ -622,6 +666,11 @@
       flex: none;
     }
 
+    .pill .icon svg {
+      width: 40px;
+      height: 40px;
+    }
+
     .pill h4 {
       margin: 0 0 10px;
       font-size: 16px;
@@ -636,13 +685,25 @@
     /* code / mcp */
     .code {
       position: relative;
+      max-width: 100%;
       border-radius: 14px;
       background: var(--surface);
       padding: 20px 20px;
       font: 16px/1.7 "JetBrains Mono", monospace;
       color: #e9d9cf;
-      overflow-x: auto;
-      white-space: pre;
+      overflow-x: hidden;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+
+    .code-line {
+      display: block;
+      min-width: 0;
+    }
+
+    .code-line:first-of-type {
+      padding-right: 72px;
     }
 
     .code .c {
@@ -682,10 +743,12 @@
     }
 
     .bubble {
+      min-width: 0;
       max-width: 88%;
       padding: 12px 15px;
       border-radius: 12px;
       font-size: 16px;
+      overflow-wrap: anywhere;
     }
 
     .bubble.me {
@@ -782,7 +845,7 @@
     }
 
     .cta p {
-      color: #d9c2b6;
+      color: #ffffff;
       max-width: 560px;
       margin: 0 auto 32px;
       font-size: 18px;
@@ -841,9 +904,27 @@
     }
 
     .lightbox img {
+      width: auto;
+      max-width: 100%;
       max-height: 92vh;
+      object-fit: contain;
       border-radius: 10px;
       box-shadow: 0 30px 100px rgba(0, 0, 0, .8);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: max(14px, env(safe-area-inset-top));
+      right: max(14px, env(safe-area-inset-right));
+      z-index: 1;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: rgba(20, 16, 17, .9);
+      color: #fff;
+      font: 28px/1 Inter, sans-serif;
+      cursor: pointer;
     }
 
     @keyframes fade {
@@ -884,12 +965,12 @@
     /* responsive */
     @media (max-width: 980px) {
       .features {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       }
 
       .card.wide {
         grid-column: span 2;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .features .card:last-child {
@@ -898,11 +979,11 @@
 
       .stage,
       .split {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .steps {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .step::after {
@@ -910,7 +991,7 @@
       }
 
       .stats {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       }
 
       .stat:nth-child(2) {
@@ -923,6 +1004,14 @@
     }
 
     @media (max-width: 760px) {
+      .wrap {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .nav .wrap {
+        height: 64px;
+      }
 
       .nav-links,
       .nav-cta {
@@ -930,25 +1019,29 @@
       }
 
       .menu-btn {
-        display: block;
+        display: inline-flex;
       }
 
       .nav.open {
         background: #0b0809;
         backdrop-filter: none;
+        -webkit-backdrop-filter: none;
       }
 
       .nav.open .nav-links {
         display: flex;
         position: absolute;
-        top: 68px;
+        top: 100%;
         left: 0;
         right: 0;
         flex-direction: column;
         gap: 0;
-        padding: 8px 24px 20px;
+        max-height: calc(100dvh - 64px);
+        overflow-y: auto;
+        padding: 8px 18px 20px;
         background: #0b0809;
         border-bottom: 1px solid var(--line);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, .28);
       }
 
       .nav.open .nav-links a {
@@ -957,7 +1050,7 @@
       }
 
       .features {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .card.wide {
@@ -969,17 +1062,139 @@
       }
 
       section {
-        padding: 80px 0;
+        padding: 72px 0;
+      }
+
+      .section-head {
+        margin-bottom: 40px;
       }
 
       .hero {
-        padding-top: 120px;
+        padding: 108px 0 56px;
+      }
+
+      .hero-grid {
+        gap: 40px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 11vw, 48px);
+        line-height: 1.05;
+      }
+
+      h2 {
+        font-size: clamp(30px, 9vw, 42px);
+      }
+
+      .badge {
+        flex-wrap: wrap;
+        border-radius: 18px;
+      }
+
+      .tabs {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 2px 1px 8px;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tab {
+        flex: none;
+        scroll-snap-align: start;
+      }
+
+      .stage {
+        gap: 24px;
+      }
+
+      .stage-text h3 {
+        font-size: 26px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .pill {
+        padding: 16px;
+      }
+
+      .pill > div:last-child {
+        min-width: 0;
+      }
+
+      .code {
+        padding: 52px 16px 16px;
+        font-size: 13.5px;
+      }
+
+      .code-line:first-of-type {
+        padding-right: 0;
+      }
+
+      .bubble {
+        max-width: 94%;
+        font-size: 15px;
       }
 
       .cta {
-        padding: 52px 22px;
+        padding: 48px 20px;
       }
 
+      .foot {
+        align-items: flex-start;
+      }
+
+      .foot nav {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .stats {
+        grid-template-columns: minmax(0, 1fr);
+        margin-top: 48px;
+      }
+
+      .stat,
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .stat:nth-child(3) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .release-line {
+        display: grid;
+        gap: 2px;
+      }
+
+      .release-line span + span::before {
+        display: none;
+      }
+
+      .hero-ctas {
+        width: 100%;
+      }
+
+      .hero-ctas .btn {
+        width: 100%;
+        max-width: 320px;
+        padding-left: 18px;
+        padding-right: 18px;
+      }
     }
   </style>
 </head>
@@ -1002,7 +1217,7 @@
         <a class="btn btn-sm btn-primary"
           href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">Download</a>
       </div>
-      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M4 7h16M4 12h16M4 17h16" />
         </svg>
@@ -1015,7 +1230,7 @@
     <!-- ================= HERO ================= -->
     <section class="hero">
       <div class="hero-bg">
-        <canvas id="embers"></canvas>
+        <canvas id="embers" aria-hidden="true"></canvas>
       </div>
       <div class="wrap hero-grid">
         <div>
@@ -1181,7 +1396,7 @@
             mod.</p>
         </div>
         <div class="tabs reveal" role="tablist" id="tabs"></div>
-        <div class="stage reveal">
+        <div class="stage reveal" id="showcasePanel" role="tabpanel">
           <div class="window">
             <img id="stageImg" src="assets/shots/world-view.webp" alt="" width="1600" height="950">
           </div>
@@ -1281,12 +1496,7 @@
     <section id="ai">
       <div class="wrap split">
         <div class="reveal">
-          <div class="code" id="mcpCode"><button class="copy"
-              data-copy="claude mcp add --transport http cdkit http://127.0.0.1:8766/mcp">Copy</button><span class="c">#
-              connect an AI assistant to the running CDKit</span>
-            <span class="k">claude</span> mcp add --transport http cdkit <span
-              class="s">http://127.0.0.1:8766/mcp</span>
-          </div>
+          <div class="code" id="mcpCode"><button class="copy" data-copy="claude mcp add --transport http cdkit http://127.0.0.1:8766/mcp">Copy</button><span class="code-line c"># connect an AI assistant to the running CDKit</span><span class="code-line"><span class="k">claude</span> mcp add --transport http cdkit <span class="s">http://127.0.0.1:8766/mcp</span></span></div>
           <div class="chat">
             <div class="bubble me">Translate the objectives of the quest “Ambush” into French and German.</div>
             <div class="bubble ai">Opened the quest designer, updated 4 texts in 2 languages. The changes are pending –
@@ -1398,7 +1608,10 @@
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot"><img alt=""></div>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close screenshot">×</button>
+    <img alt="">
+  </div>
 
   <script>
     (() => {
@@ -1410,11 +1623,20 @@
       const onScroll = () => nav.classList.toggle('scrolled', scrollY > 10);
       addEventListener('scroll', onScroll, { passive: true }); onScroll();
       const menuBtn = document.getElementById('menuBtn');
+      const closeMenu = (returnFocus = false) => {
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        if (returnFocus) menuBtn.focus();
+      };
       menuBtn.addEventListener('click', () => {
         const open = nav.classList.toggle('open');
-        menuBtn.setAttribute('aria-expanded', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
       });
-      document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+      document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => closeMenu()));
+      addEventListener('resize', () => { if (innerWidth > 760) closeMenu(); }, { passive: true });
+      addEventListener('keydown', e => {
+        if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu(true);
+      });
 
       /* reveal on scroll */
       const io = new IntersectionObserver(entries => entries.forEach(e => {
@@ -1423,12 +1645,22 @@
       document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       requestAnimationFrame(() => setTimeout(() => document.getElementById('heroShot').classList.add('in'), 120));
 
-      /* card spotlight */
-      document.querySelectorAll('.card').forEach(card => card.addEventListener('pointermove', e => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      }));
+      /* card spotlight — mouse, pen and touch */
+      document.querySelectorAll('.card').forEach(card => {
+        const moveSpotlight = e => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+          card.classList.add('spotlight-active');
+        };
+        const clearSpotlight = () => card.classList.remove('spotlight-active');
+        card.addEventListener('pointermove', moveSpotlight, { passive: true });
+        card.addEventListener('pointerleave', clearSpotlight);
+        card.addEventListener('pointercancel', clearSpotlight);
+        card.addEventListener('pointerup', e => {
+          if (e.pointerType !== 'mouse') clearSpotlight();
+        });
+      });
 
       /* showcase */
       const scenes = [
@@ -1471,8 +1703,18 @@
       ];
       const tabs = document.getElementById('tabs');
       const img = document.getElementById('stageImg');
+      const showcasePanel = document.getElementById('showcasePanel');
+      let auto = null, current = 0;
+      const stopAuto = () => { clearInterval(auto); auto = null; };
       const show = (s, focus) => {
-        tabs.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.id === s.id));
+        current = scenes.findIndex(scene => scene.id === s.id);
+        tabs.querySelectorAll('.tab').forEach(t => {
+          const selected = t.dataset.id === s.id;
+          t.setAttribute('aria-selected', String(selected));
+          t.tabIndex = selected ? 0 : -1;
+        });
+        const selectedTab = tabs.querySelector(`[data-id="${s.id}"]`);
+        showcasePanel.setAttribute('aria-labelledby', selectedTab.id);
         img.style.opacity = 0;
         const next = new Image();
         next.src = `assets/shots/${s.img}.webp`;
@@ -1481,36 +1723,78 @@
         document.getElementById('stageHead').textContent = s.head;
         document.getElementById('stageText').textContent = s.text;
         document.getElementById('stageList').innerHTML = s.list.map(l => `<li>${l}</li>`).join('');
-        if (focus) tabs.querySelector(`[data-id="${s.id}"]`).focus();
+        if (focus) selectedTab.focus();
       };
       scenes.forEach((s, i) => {
         const b = document.createElement('button');
-        b.className = 'tab'; b.type = 'button'; b.role = 'tab'; b.dataset.id = s.id; b.textContent = s.label;
+        b.className = 'tab'; b.type = 'button'; b.role = 'tab'; b.dataset.id = s.id; b.id = `tab-${s.id}`;
+        b.setAttribute('aria-controls', 'showcasePanel');
+        b.textContent = s.label;
         b.addEventListener('click', () => { show(s); stopAuto(); });
         b.addEventListener('keydown', e => {
-          if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-          const n = scenes[(i + (e.key === 'ArrowRight' ? 1 : scenes.length - 1)) % scenes.length];
-          show(n, true); stopAuto();
+          let nextIndex = null;
+          if (e.key === 'ArrowRight') nextIndex = (i + 1) % scenes.length;
+          if (e.key === 'ArrowLeft') nextIndex = (i + scenes.length - 1) % scenes.length;
+          if (e.key === 'Home') nextIndex = 0;
+          if (e.key === 'End') nextIndex = scenes.length - 1;
+          if (nextIndex === null) return;
+          e.preventDefault();
+          show(scenes[nextIndex], true);
+          stopAuto();
         });
         tabs.appendChild(b);
       });
       show(scenes[0]);
-      let auto = null, current = 0;
-      const startAuto = () => { if (!reduced) auto = setInterval(() => show(scenes[current = (current + 1) % scenes.length]), 6000); };
-      const stopAuto = () => { clearInterval(auto); auto = null; };
-      new IntersectionObserver(([e]) => e.isIntersecting ? (auto || startAuto()) : stopAuto(), { threshold: .4 })
+      const startAuto = () => { if (!reduced && !auto) auto = setInterval(() => show(scenes[(current + 1) % scenes.length]), 6000); };
+      new IntersectionObserver(([e]) => e.isIntersecting ? startAuto() : stopAuto(), { threshold: .4 })
         .observe(document.getElementById('showcase'));
 
       /* lightbox */
-      const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+      const lb = document.getElementById('lightbox');
+      const lbImg = lb.querySelector('img');
+      const lbClose = lb.querySelector('.lightbox-close');
+      let lightboxReturnFocus = null;
+      const openLb = t => {
+        lightboxReturnFocus = t;
+        lbImg.src = t.currentSrc || t.src;
+        lbImg.alt = t.alt || 'Screenshot';
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        lbClose.focus();
+      };
+      const closeLb = () => {
+        if (!lb.classList.contains('open')) return;
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lightboxReturnFocus) lightboxReturnFocus.focus();
+      };
+      const zoomable = document.querySelectorAll('.window img, .card.wide img');
+      zoomable.forEach(t => {
+        t.tabIndex = 0;
+        t.setAttribute('role', 'button');
+        t.setAttribute('aria-label', `Open screenshot: ${t.alt || 'image'}`);
+        t.addEventListener('keydown', e => {
+          if (e.key !== 'Enter' && e.key !== ' ') return;
+          e.preventDefault();
+          openLb(t);
+        });
+      });
       document.addEventListener('click', e => {
         const t = e.target.closest('.window img, .card.wide img');
-        if (!t) return;
-        lbImg.src = t.currentSrc || t.src; lbImg.alt = t.alt; lb.classList.add('open');
+        if (t) openLb(t);
       });
-      const closeLb = () => lb.classList.remove('open');
-      lb.addEventListener('click', closeLb);
-      addEventListener('keydown', e => e.key === 'Escape' && closeLb());
+      lb.addEventListener('click', e => {
+        if (e.target === lb || e.target === lbImg || e.target === lbClose) closeLb();
+      });
+      addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeLb();
+        if (e.key === 'Tab' && lb.classList.contains('open')) {
+          e.preventDefault();
+          lbClose.focus();
+        }
+      });
 
       /* copy */
       document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', async () => {
@@ -1554,11 +1838,15 @@
       const cv = document.getElementById('embers');
       if (!reduced && cv.getContext) {
         const ctx = cv.getContext('2d');
+        const canvasHost = cv.parentElement;
         let w, h, dpr, parts = [];
         const resize = () => {
           dpr = Math.min(2, devicePixelRatio || 1);
-          w = cv.clientWidth; h = cv.clientHeight;
-          cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          w = Math.max(1, canvasHost.clientWidth);
+          h = Math.max(1, canvasHost.clientHeight);
+          cv.width = Math.round(w * dpr);
+          cv.height = Math.round(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
           const count = Math.round(Math.min(90, w / 14));
           parts = Array.from({ length: count }, () => spawn(true));
         };
@@ -1585,7 +1873,13 @@
           }
           requestAnimationFrame(loop);
         };
-        addEventListener('resize', resize); resize(); requestAnimationFrame(loop);
+        if ('ResizeObserver' in window) {
+          new ResizeObserver(resize).observe(canvasHost);
+        } else {
+          addEventListener('resize', resize, { passive: true });
+        }
+        resize();
+        requestAnimationFrame(loop);
       }
     })();
   </script>
