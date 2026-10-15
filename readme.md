@@ -19,8 +19,13 @@ Edit the world, sculpt terrain, write quests, add characters – and install it 
 2. Unpack it into a folder of your own (not the game folder, not `Program Files`).
 3. Start `CDkit.exe` and follow the [getting started guide](https://github.com/Moon-yungg/CDKit-Releases/wiki/Getting-Started).
 
-CDKit updates itself. It never overwrites the game's own files – mods are separate packages you can uninstall with one
-click, and Steam's "Verify integrity of game files" restores the original game at any time.
+CDKit updates itself. Mods are separate packages next to the game's own. To load one, CDKit changes a few small game
+files: it adds the mod to the game's package list (`meta\0.papgt`), and only where the mod needs it, it adjusts the
+texture header list (`meta\0.pathc`, for replaced textures) or one letter in a base pack index (for example
+`0015\0.pamt`, for an edited sector level, so the game loads the mod's copy instead of both). The previous package list is
+backed up to `%LOCALAPPDATA%\CDKit\backups`, the other changes are recorded in the mod's folder, and **Uninstall** puts
+everything back. After a game update CDKit checks these files when it starts and offers to reinstall or remove the mods;
+Steam's "Verify integrity of game files" restores the original game at any time.
 
 ---
 
