@@ -303,20 +303,23 @@ def make_runtime_script(source: str, locale: str, translations: dict[str, str]) 
         "\n"
     )
     script = script[:start] + replacement + script[end:]
-    script = re.sub(
-        r"\s*onLanguageChange\(\(\) => \{\s*tabs\.querySelectorAll\('\.tab'\).*?\n\s*\}\);\s*",
-        "\n",
-        script,
-        count=1,
-        flags=re.S,
-    )
-    script = re.sub(
-        r"\s*onLanguageChange\(\(\) => \{\s*zoomable\.forEach\(t => t\.setAttribute\('aria-label'.*?\n\s*\}\);\s*",
-        "\n",
-        script,
-        count=1,
-        flags=re.S,
-    )
+    for start_marker, end_marker in (
+        (
+            "      onLanguageChange(() => {\n        tabs.querySelectorAll('.tab').forEach",
+            "      const startAuto = () => {",
+        ),
+        (
+            "      onLanguageChange(() => {\n        zoomable.forEach",
+            "      document.addEventListener('click', e => {",
+        ),
+    ):
+        if script.count(start_marker) != 1 or script.count(end_marker) != 1:
+            raise ValueError("Could not locate a language-change callback block.")
+        start = script.index(start_marker)
+        end = script.index(end_marker, start)
+        if end <= start:
+            raise ValueError("Language-change callback markers are out of order.")
+        script = script[:start] + script[end:]
     script = script.replace("      onLanguageChange(renderLatestRelease);\n", "")
     script = script.replace("next.src = `assets/shots/${s.img}.webp`;", "next.src = `../assets/shots/${s.img}.webp`;")
 

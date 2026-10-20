@@ -101,8 +101,6 @@ const REPO = 'Moon-yungg/CDKit-Releases';
         if (!b.isConnected) tabs.appendChild(b);
       });
       show(scenes[0]);
-show(scenes[current]);
-      });
       const startAuto = () => {
         if (reduced || auto) return;
         tabs.classList.add('auto');
@@ -144,7 +142,7 @@ show(scenes[current]);
           openLb(t);
         });
       });
-document.addEventListener('click', e => {
+      document.addEventListener('click', e => {
         const t = e.target.closest('.window img, .card.wide img');
         if (t) openLb(t);
       });
