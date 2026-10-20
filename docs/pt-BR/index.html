@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CDKit – O kit de ferramentas de modding para Crimson Desert</title>
+  <meta http-equiv="content-language" content="pt-BR">
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta name="description" content="Edite o mundo, modele o terreno, crie missões, adicione personagens e instale tudo no Crimson Desert com um clique. Grátis, não destrutivo e com atualização automática.">
+  
+  
+  <meta name="theme-color" content="#0b0809">
+
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:locale:alternate" content="es_ES">
+  
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:locale:alternate" content="tr_TR">
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="CDKit – O kit de ferramentas de modding para Crimson Desert">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:description" content="Edite o mundo, modele o terreno, crie missões, adicione personagens e instale tudo no Crimson Desert com um clique. Grátis, não destrutivo e com atualização automática.">
+  
+  
+  <meta property="og:image" content="https://moon-yungg.github.io/CDKit-Releases/assets/og.jpg">
+  <meta property="og:image:alt" lang="en" content="CDKit editor preview">
+  <meta property="og:image:alt" lang="zh-CN" content="CDKit《红色沙漠》编辑器预览">
+  <meta property="og:image:alt" lang="zh-TW" content="CDKit《赤血沙漠》編輯器預覽">
+  <meta property="og:image:alt" lang="de" content="Vorschau des CDKit-Editors">
+  <meta property="og:image:alt" lang="fr" content="Aperçu de l’éditeur CDKit">
+  <meta property="og:image:alt" lang="ko" content="CDKit 편집기 미리보기">
+  <meta property="og:image:alt" lang="ja" content="CDKit エディターのプレビュー">
+  <meta property="og:image:alt" lang="es" content="Vista previa del editor de CDKit">
+  <meta property="og:image:alt" lang="pt-BR" content="Prévia do editor do CDKit">
+  <meta property="og:image:alt" lang="ru" content="Предпросмотр редактора CDKit">
+  <meta property="og:image:alt" lang="tr" content="CDKit düzenleyici önizlemesi">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CDKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" lang="en" content="CDKit – The modding toolkit for Crimson Desert">
+  <meta name="twitter:title" lang="zh-CN" content="CDKit – 《红色沙漠》模组制作工具包">
+  <meta name="twitter:title" lang="zh-TW" content="CDKit – 《赤血沙漠》模組製作工具包">
+  <meta name="twitter:title" lang="de" content="CDKit – Das Modding-Toolkit für Crimson Desert">
+  <meta name="twitter:title" lang="fr" content="CDKit – La boîte à outils de modding pour Crimson Desert">
+  <meta name="twitter:title" lang="ko" content="CDKit – Crimson Desert 모딩 툴킷">
+  <meta name="twitter:title" lang="ja" content="CDKit – Crimson Desert のMOD制作ツールキット">
+  <meta name="twitter:title" lang="es" content="CDKit – El kit de herramientas de modding para Crimson Desert">
+  <meta name="twitter:title" lang="pt-BR" content="CDKit – O kit de ferramentas de modding para Crimson Desert">
+  <meta name="twitter:title" lang="ru" content="CDKit — Набор инструментов для моддинга Crimson Desert">
+  <meta name="twitter:title" lang="tr" content="CDKit – Crimson Desert için modlama araç seti">
+  <meta name="twitter:description" lang="en" content="Edit the world, sculpt terrain, write quests, add characters and install it all into Crimson Desert with one click. Free, non-destructive, self-updating.">
+  <meta name="twitter:description" lang="zh-CN" content="编辑世界、雕刻地形、编写任务、添加角色，并一键安装到《红色沙漠》。免费、非破坏式、自动更新。">
+  <meta name="twitter:description" lang="zh-TW" content="編輯世界、塑造地形、編寫任務、加入角色，並一鍵安裝到《赤血沙漠》。免費、非破壞式、自動更新。">
+  <meta name="twitter:description" lang="de" content="Bearbeite die Welt, forme Terrain, erstelle Quests, füge Charaktere hinzu und installiere alles mit einem Klick in Crimson Desert. Kostenlos, nicht-destruktiv und selbstaktualisierend.">
+  <meta name="twitter:description" lang="fr" content="Modifiez le monde, sculptez le terrain, créez des quêtes, ajoutez des personnages et installez le tout dans Crimson Desert en un clic. Gratuit, non destructif et mis à jour automatiquement.">
+  <meta name="twitter:description" lang="ko" content="월드를 편집하고 지형을 조형하며 퀘스트와 캐릭터를 만든 뒤 한 번의 클릭으로 Crimson Desert에 설치하세요. 무료이며 원본 파일을 손상하지 않고 자동 업데이트됩니다.">
+  <meta name="twitter:description" lang="ja" content="ワールド編集、地形の造形、クエスト作成、キャラクター追加を行い、ワンクリックで Crimson Desert に導入できます。無料・非破壊・自動更新対応。">
+  <meta name="twitter:description" lang="es" content="Edita el mundo, esculpe el terreno, crea misiones, añade personajes e instálalo todo en Crimson Desert con un solo clic. Gratis, no destructivo y con actualizaciones automáticas.">
+  <meta name="twitter:description" lang="pt-BR" content="Edite o mundo, modele o terreno, crie missões, adicione personagens e instale tudo no Crimson Desert com um clique. Grátis, não destrutivo e com atualização automática.">
+  <meta name="twitter:description" lang="ru" content="Редактируйте мир, меняйте рельеф, создавайте задания и персонажей, а затем устанавливайте всё в Crimson Desert одним нажатием. Бесплатно, без изменения оригинальных файлов и с автообновлением.">
+  <meta name="twitter:description" lang="tr" content="Dünyayı düzenleyin, araziyi şekillendirin, görevler yazın, karakterler ekleyin ve hepsini tek tıkla Crimson Desert’e kurun. Ücretsiz, tahribatsız ve otomatik güncellenir.">
+  <meta name="twitter:image" content="assets/og.jpg">
+  <meta name="twitter:image:alt" lang="en" content="CDKit editor preview">
+  <meta name="twitter:image:alt" lang="zh-CN" content="CDKit《红色沙漠》编辑器预览">
+  <meta name="twitter:image:alt" lang="zh-TW" content="CDKit《赤血沙漠》編輯器預覽">
+  <meta name="twitter:image:alt" lang="de" content="Vorschau des CDKit-Editors">
+  <meta name="twitter:image:alt" lang="fr" content="Aperçu de l’éditeur CDKit">
+  <meta name="twitter:image:alt" lang="ko" content="CDKit 편집기 미리보기">
+  <meta name="twitter:image:alt" lang="ja" content="CDKit エディターのプレビュー">
+  <meta name="twitter:image:alt" lang="es" content="Vista previa del editor de CDKit">
+  <meta name="twitter:image:alt" lang="pt-BR" content="Prévia do editor do CDKit">
+  <meta name="twitter:image:alt" lang="ru" content="Предпросмотр редактора CDKit">
+  <meta name="twitter:image:alt" lang="tr" content="CDKit düzenleyici önizlemesi">
+
+  <link rel="alternate" hreflang="x-default" href="../x-default/">
+  <link rel="alternate" hreflang="en" href="../en/">
+  <link rel="alternate" hreflang="zh-CN" href="../zh-CN/">
+  <link rel="alternate" hreflang="zh-TW" href="../zh-TW/">
+  <link rel="alternate" hreflang="de" href="../de/">
+  <link rel="alternate" hreflang="fr" href="../fr/">
+  <link rel="alternate" hreflang="ko" href="../ko/">
+  <link rel="alternate" hreflang="ja" href="../ja/">
+  <link rel="alternate" hreflang="es" href="../es/">
+  <link rel="alternate" hreflang="pt-BR" href="../pt-BR/">
+  <link rel="alternate" hreflang="ru" href="../ru/">
+  <link rel="alternate" hreflang="tr" href="../tr/">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Cinzel:wght@600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+<link rel="canonical" href="https://moon-yungg.github.io/CDKit-Releases/pt-BR/"></head>
+
+<body>
+
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <a href="#top" class="brand"><img src="../assets/logo.svg" alt="">CDKit</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#features">Recursos</a>
+        <a href="#showcase">Demonstração</a>
+        <a href="#how">Como funciona</a>
+        <a href="#ai">AI</a>
+        <a href="#faq">Perguntas frequentes</a>
+        <a href="https://github.com/Moon-yungg/CDKit-Releases/wiki">Guia</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-sm" href="https://discord.gg/HfkShRJZU" target="_blank" rel="noopener">Discord</a>
+        <a class="btn btn-sm btn-primary" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">Baixar</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="fluent-icon" aria-hidden="true">&#xF560;</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-bg">
+        <canvas id="embers" aria-hidden="true"></canvas>
+      </div>
+      <div class="wrap hero-grid">
+        <div>
+          <span class="badge"><b>GRÁTIS</b><span class="dot"></span><span id="heroBadge">O kit de ferramentas de modding para Crimson Desert</span></span>
+          <h1 class="serif">Redefina o <span class="grad-text">mundo de Pywel</span></h1>
+          <p class="lead">Edite o mundo aberto em 3D, esculpa o terreno, escreva missões, traga seus próprios personagens – depois instale tudo no jogo com um único clique e remova com a mesma facilidade.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-lg btn-primary" id="downloadBtn" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">
+              <span class="fluent-icon" aria-hidden="true">&#xF151;</span>
+              Baixar para Windows
+            </a>
+            <a class="btn btn-lg" href="https://github.com/Moon-yungg/CDKit-Releases/wiki/Getting-Started">
+              <span class="fluent-icon" aria-hidden="true">&#xF286;</span>
+              Ler o guia
+            </a>
+          </div>
+          <div class="release-line" id="releaseLine"><span>Windows 10 / 11</span><span>Portátil – sem instalador</span><span>Atualiza automaticamente</span></div>
+        </div>
+        <div class="hero-shot" id="heroShot">
+          <div class="window">
+            <img src="../assets/shots/world-view.webp" alt="Editor de mundo do CDKit mostrando a área de Hernand em 3D" width="1600" height="860" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="stats reveal">
+          <div class="stat"><strong class="grad-text">0</strong><span>arquivos originais do jogo alterados</span></div>
+          <div class="stat"><strong class="grad-text" data-count="2100000" data-suffix="+">2.1M+</strong><span>arquivos do jogo para explorar e substituir</span></div>
+          <div class="stat"><strong class="grad-text" data-count="7">7</strong><span>áreas de trabalho: mundo, história, dados …</span></div>
+          <div class="stat"><strong class="grad-text" data-count="11">11</strong><span>idiomas do editor</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tudo em um só lugar</span>
+          <h2 class="serif">Um único kit. <span class="grad-text">Para cada parte do jogo.</span></h2>
+          <p>De mover um único barril a criar uma nova linha de missões com personagens próprios, o CDKit cobre todo o caminho da ideia ao mod instalado.</p>
+        </div>
+        <div class="features">
+          <article class="card wide reveal">
+            <div>
+              <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF45A;</span></div>
+              <h3>Um editor de mundo 3D com cara de engine</h3>
+              <p>Voe pelo mundo aberto transmitido exatamente como aparece no jogo. Selecione, mova, gire, redimensione, duplique e apague objetos com gizmo, snapping e desfazer completo. Arraste prédios, objetos e árvores de um navegador com mais de 49.000 prefabs.</p>
+            </div>
+            <img src="../assets/shots/prefab-browser.webp" alt="Navegador de prefabs ao lado da visão 3D" loading="lazy" width="1600" height="860">
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF00E8;</span></div>
+            <h3>Terreno e vegetação</h3>
+            <p>Eleve, abaixe ou nivele o terreno e pinte materiais e florestas com pincéis. A navegação e o mapa-múndi são atualizados ao compilar.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE178;</span></div>
+            <h3>Editor de missões</h3>
+            <p>Veja as missões como um fluxo de objetivos. Edite tarefas, recompensas, diálogos, condições e falas, ou crie novas missões a partir de modelos.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF5BD;</span></div>
+            <h3>Seus próprios personagens</h3>
+            <p>Um assistente recebe seu modelo FBX, glTF, Collada ou MetaHuman, vincula ao esqueleto do jogo, mapeia as animações e o coloca no mundo.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF77C;</span></div>
+            <h3>Itens, lojas e loot</h3>
+            <p>Renomeie e rebalanceie itens, altere preços e habilidades, reabasteça comerciantes e decida o que inimigos e baús deixam cair.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF605;</span></div>
+            <h3>Modo de jogo em uma tecla</h3>
+            <p>Pressione F5 e o jogo inicia diretamente com a cena que você está editando, seu mod instalado e você exatamente naquele local.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF833;</span></div>
+            <h3>Todos os idiomas</h3>
+            <p>Altere qualquer texto do jogo em qualquer idioma. Um botão mostra o mesmo texto lado a lado em todos eles.
+            </p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF75D;</span></div>
+            <h3>Todos os dados</h3>
+            <p>Todas as tabelas de dados do jogo, com busca, edição em massa e ida e volta por CSV com Excel ou Google Sheets.
+            </p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF286;</span></div>
+            <h3>Cartas e lore</h3>
+            <p>Escreva cartas e pergaminhos que os jogadores podem pegar e ler, e coloque-os em qualquer lugar do mundo.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
+            <h3>Um editor moderno</h3>
+            <p>Sete áreas de trabalho, cada item, missão e NPC em sua própria aba, uma paleta de comandos para tudo e recuperação após falhas – em tema escuro ou claro.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SHOWCASE ================= -->
+    <section id="showcase" class="showcase">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Dê uma olhada</span>
+          <h2 class="serif">Feito para criadores, <span class="grad-text">não para formatos de arquivo</span></h2>
+          <p>Sem edição hexadecimal e sem extrair arquivos manualmente. O CDKit entende os formatos do jogo para que você possa focar no seu mod.</p>
+        </div>
+        <div class="show-grid reveal">
+          <div class="tabs" role="tablist" id="tabs" aria-label="Demonstração"><button class="tab" type="button" role="tab" data-id="world" id="tab-world" aria-controls="showcasePanel" aria-selected="true" tabindex="0">Editor de mundo</button><button class="tab" type="button" role="tab" data-id="quests" id="tab-quests" aria-controls="showcasePanel" aria-selected="false" tabindex="-1">Editor de missões</button><button class="tab" type="button" role="tab" data-id="characters" id="tab-characters" aria-controls="showcasePanel" aria-selected="false" tabindex="-1">Novos personagens</button><button class="tab" type="button" role="tab" data-id="items" id="tab-items" aria-controls="showcasePanel" aria-selected="false" tabindex="-1">Itens</button><button class="tab" type="button" role="tab" data-id="files" id="tab-files" aria-controls="showcasePanel" aria-selected="false" tabindex="-1">Arquivos do jogo</button><button class="tab" type="button" role="tab" data-id="map" id="tab-map" aria-controls="showcasePanel" aria-selected="false" tabindex="-1">Mapa-múndi</button></div>
+          <div class="stage" id="showcasePanel" role="tabpanel" aria-labelledby="tab-world">
+            <div class="window">
+              <img id="stageImg" src="../assets/shots/world-view.webp" alt="Edite o mundo onde ele está" width="1600" height="860">
+            </div>
+            <div class="stage-text">
+              <h3 id="stageHead">Edite o mundo onde ele está</h3>
+              <p id="stageText">O mundo aberto é transmitido ao redor da câmera com terreno, vegetação, céu e todos os objetos, exatamente como no jogo.</p>
+              <ul class="checks" id="stageList"><li>Voe com WASD, orbite e enquadre com F</li><li>Mova, gire e redimensione com snapping</li><li>Posicione prefabs arrastando e soltando</li><li>Foco, fases, rotas e estradas</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW ================= -->
+    <section id="how">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Como funciona</span>
+          <h2 class="serif">Da ideia ao jogo <span class="grad-text">em três passos</span></h2>
+          <p>Seu trabalho fica em uma pasta de projeto. O CDKit o transforma em um pacote extra que o jogo carrega sobre seus próprios dados.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <h3>Crie um projeto</h3>
+            <p>Escolha uma pasta e um nome. Tudo o que você alterar dali em diante fica reunido ali, facilitando backup, versionamento e compartilhamento.</p>
+          </div>
+          <div class="step reveal">
+            <h3>Faça suas alterações</h3>
+            <p>Use o editor de mundo, editor de missões, editor de itens e assistentes. Desfaça qualquer coisa, visualize em 3D e teste no modo de jogo.</p>
+          </div>
+          <div class="step reveal">
+            <h3>Instale com um clique</h3>
+            <p>Feche o jogo e clique em <b>Instalar</b>, depois jogue. Mudou de ideia? <b>Desinstalar</b> deixa o jogo exatamente como estava antes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SAFE ================= -->
+    <section>
+      <div class="wrap split">
+        <div class="reveal">
+          <span class="eyebrow">Seguro por design</span>
+          <h2 class="serif">Seu jogo sempre pode ser <span class="grad-text">restaurado</span></h2>
+          <p style="color:var(--muted);font-size:18px;margin:0">Os mods são pacotes separados, fora da pasta do jogo. O pequeno runtime do CDKit (cdkit.asi) os mostra ao jogo enquanto ele roda – nenhum arquivo original do jogo é alterado. Desinstalar os remove na hora, as atualizações do jogo e a verificação de arquivos da Steam não removem mais seus mods, e vários mods carregam juntos, com cada conflito listado.</p>
+          <div class="pill-list">
+            <div class="pill">
+              <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
+              <div>
+                <h4>Não destrutivo</h4>
+                <p>Os mods são carregados sobre o jogo. Remova-os com um clique.</p>
+              </div>
+            </div>
+            <div class="pill">
+              <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF190;</span></div>
+              <div>
+                <h4>Sobrevive às atualizações do jogo</h4>
+                <p>As alterações são armazenadas como alterações, não como cópias. Recompile após um patch e pronto.</p>
+              </div>
+            </div>
+            <div class="pill">
+              <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF151;</span></div>
+              <div>
+                <h4>Atualiza automaticamente</h4>
+                <p>Novas versões aparecem com notas de lançamento na página inicial: um clique, download verificado e reinício.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="window">
+            <img src="../assets/shots/start-page.webp" alt="A página inicial do CDKit com o próximo passo do seu projeto" loading="lazy" width="1600" height="860">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AI ================= -->
+    <section id="ai">
+      <div class="wrap split">
+        <div class="reveal">
+          <div class="code" id="mcpCode"><button class="copy" data-copy="claude mcp add --transport http cdkit-web http://127.0.0.1:8767/mcp">Copiar</button><span class="code-line c"># conectar um assistente de IA ao CDKit em execução</span><span class="code-line"><span class="k">claude</span> mcp add --transport http cdkit-web <span class="s">http://127.0.0.1:8767/mcp</span></span></div>
+          <div class="chat">
+            <div class="bubble me">Traduza os objetivos da missão “Ambush” para francês e alemão.</div>
+            <div class="bubble ai">Abri o editor de missões e atualizei 4 textos em 2 idiomas. As alterações estão pendentes: revise e clique em <b>Salvar</b>.</div>
+            <div class="bubble me">Leve a visão do mundo até Hernand e faça uma captura 4K.</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Pronto para IA</span>
+          <h2 class="serif">Deixe um assistente <span class="grad-text">fazer os cliques por você</span></h2>
+          <p style="color:var(--muted);font-size:18px">O CDKit tem uma interface MCP integrada. Assistentes de IA como Claude podem ler o que o editor mostra, operar seus controles, mover a câmera 3D, editar tabelas e tirar capturas — apenas dentro do CDKit, no seu próprio PC, com cada etapa destacada e reversível.</p>
+          <a class="btn" href="https://github.com/Moon-yungg/CDKit-Releases/wiki/AI-Assistants-MCP">Como conectar →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Perguntas</span>
+          <h2 class="serif">É bom <span class="grad-text">saber</span></h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>O CDKit é grátis?</summary>
+            <p>Sim. Baixe, extraia e execute <code>CDkit.exe</code> — sem conta e sem instalador.</p>
+          </details>
+          <details>
+            <summary>Pode quebrar meu jogo ou meus saves?</summary>
+            <p>Nenhum arquivo original do jogo é alterado. O CDKit compila seus mods na própria pasta, e o runtime cdkit.asi (carregado por um ASI loader em bin64) os mostra ao jogo enquanto ele roda. Desinstalar remove tudo na hora, e as atualizações do jogo ou a “Verificar integridade dos arquivos” da Steam não removem mais seus mods. O modo de jogo bloqueia o salvamento, então seus saves ficam seguros durante os testes.</p>
+          </details>
+          <details>
+            <summary>Do que eu preciso?</summary>
+            <p>Windows 10 ou 11 de 64 bits, Crimson Desert na Steam e uma placa de vídeo DirectX 12. O modo de jogo e a prévia ao vivo também usam o plugin World Builder; importar pacotes MetaHuman/Fab exige Unreal Engine.
+            </p>
+          </details>
+          <details>
+            <summary>Preciso saber programação ou modelagem 3D?</summary>
+            <p>Não. A maioria das tarefas — mover objetos, alterar itens, editar missões e textos — é feita com formulários e o mouse. Para modelos próprios, você só precisa de um arquivo 3D; o assistente cuida do resto.</p>
+          </details>
+          <details>
+            <summary>O que acontece quando o jogo atualiza?</summary>
+            <p>A Steam redefine a lista de pacotes do jogo, então os mods ficam inativos. Abra seu projeto no CDKit, clique em Build e Install e, na maioria dos casos, suas alterações continuam funcionando.</p>
+          </details>
+          <details>
+            <summary>Posso compartilhar meus mods?</summary>
+            <p>Sim. Compartilhe sua pasta de projeto; outras pessoas abrem no CDKit e clicam em Install, e o CDKit recompila para a versão do jogo delas.</p>
+          </details>
+          <details>
+            <summary>Onde encontro ajuda?</summary>
+            <p>Comece pelo <a href="https://github.com/Moon-yungg/CDKit-Releases/wiki">guia</a>, e pergunte o que quiser no nosso <a href="https://discord.gg/HfkShRJZU" target="_blank" rel="noopener">Discord</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section style="padding-top:20px">
+      <div class="wrap">
+        <div class="cta reveal">
+          <h2 class="serif">Seu Pywel está esperando.</h2>
+          <p>Baixe o CDKit, crie um projeto e faça sua primeira alteração em poucos minutos.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-lg btn-primary" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">
+              <span class="fluent-icon" aria-hidden="true">&#xF151;</span>
+              Baixar CDKit
+            </a>
+            <a class="btn btn-lg" href="https://discord.gg/HfkShRJZU" target="_blank" rel="noopener">
+              <span class="fluent-icon" aria-hidden="true">&#xF286;</span>
+              Entrar no Discord
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <a href="#top" class="brand"><img src="../assets/logo.svg" alt="">CDKit</a>
+        <div class="lang-picker">
+          <details class="lang-menu">
+<summary class="lang-select" aria-label="Select language"><span>Português (Brasil)</span><span class="fluent-icon lang-chevron" aria-hidden="true">&#xF2A2;</span></summary>
+<nav class="lang-options" aria-label="Select language">
+<a class="lang-option" href="../en/" lang="en" hreflang="en">English</a>
+<a class="lang-option" href="../zh-CN/" lang="zh-CN" hreflang="zh-CN">简体中文</a>
+<a class="lang-option" href="../zh-TW/" lang="zh-TW" hreflang="zh-TW">繁體中文</a>
+<a class="lang-option" href="../de/" lang="de" hreflang="de">Deutsch</a>
+<a class="lang-option" href="../fr/" lang="fr" hreflang="fr">Français</a>
+<a class="lang-option" href="../ko/" lang="ko" hreflang="ko">한국어</a>
+<a class="lang-option" href="../ja/" lang="ja" hreflang="ja">日本語</a>
+<a class="lang-option" href="../es/" lang="es" hreflang="es">Español</a>
+<a class="lang-option" href="../pt-BR/" lang="pt-BR" hreflang="pt-BR" aria-current="page">Português (Brasil)</a>
+<a class="lang-option" href="../ru/" lang="ru" hreflang="ru">Русский</a>
+<a class="lang-option" href="../tr/" lang="tr" hreflang="tr">Türkçe</a>
+</nav>
+</details>
+        </div>
+        <nav>
+          <a href="https://github.com/Moon-yungg/CDKit-Releases/releases">Versões</a>
+          <a href="https://github.com/Moon-yungg/CDKit-Releases/wiki">Guia</a>
+          <a href="https://github.com/Moon-yungg/CDKit-Releases/wiki/Troubleshooting">Solução de problemas</a>
+          <a href="https://discord.gg/HfkShRJZU" target="_blank" rel="noopener">Discord</a>
+        </nav>
+      </div>
+      <p class="disclaimer">O CDKit é uma ferramenta de modding gratuita feita por fãs. Não é afiliada, endossada nem patrocinada pela Pearl Abyss. Crimson Desert e todos os nomes e recursos relacionados são marcas ou propriedade de seus respectivos titulares. Use mods por sua conta e risco e respeite os termos de serviço do jogo.</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de capturas" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Fechar captura"><span class="fluent-icon" aria-hidden="true"></span></button>
+    <img alt="">
+  </div>
+<script src="../assets/site-pt-BR.js" defer></script>
+</body>
+
+</html>
