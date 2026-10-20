@@ -105,7 +105,7 @@ def html_escape_attr(value: str) -> str:
     return html.escape(value, quote=True)
 
 
-def language_menu(locale: str, glyphs: dict[str, int]) -> str:
+def language_menu(locale: str, glyphs: dict[str, int], path_prefix: str) -> str:
     name = next(name for code, name, _ in LANGUAGES if code == locale)
     chevron = glyphs[SELECT_GLYPH]
     lines = [
@@ -115,17 +115,19 @@ def language_menu(locale: str, glyphs: dict[str, int]) -> str:
     ]
     for code, label, _ in LANGUAGES:
         current = ' aria-current="page"' if code == locale else ""
-        lines.append(f'<a class="lang-option" href="../{code}/" lang="{code}" hreflang="{code}"{current}>{html.escape(label)}</a>')
+        lines.append(f'<a class="lang-option" href="{path_prefix}{code}/" lang="{code}" hreflang="{code}"{current}>{html.escape(label)}</a>')
     lines.extend(["</nav>", "</details>"])
     return "\n".join(lines)
 
 
 class StaticPage(HTMLParser):
-    def __init__(self, locale: str, translations: dict[str, str], glyphs: dict[str, int]):
+    def __init__(self, locale: str, translations: dict[str, str], glyphs: dict[str, int], root: bool = False):
         super().__init__(convert_charrefs=True)
         self.locale = locale
         self.translations = translations
         self.glyphs = glyphs
+        self.root = root
+        self.path_prefix = "./" if root else "../"
         self.output: list[str] = []
         self.svg_index = 0
         self.skip_svg = False
@@ -154,7 +156,7 @@ class StaticPage(HTMLParser):
             return
 
         if tag == "select" and attributes.get("id") == "languageSelect":
-            self.output.append(language_menu(self.locale, self.glyphs))
+            self.output.append(language_menu(self.locale, self.glyphs, self.path_prefix))
             self.skip_select = True
             return
 
@@ -162,34 +164,33 @@ class StaticPage(HTMLParser):
             attributes["lang"] = self.locale
 
         if tag == "meta":
-            name = (attributes.get("name") or "").lower()
             prop = (attributes.get("property") or "").lower()
-            if name == "description" or prop in {"og:title", "og:description"}:
-                if attributes.get("lang") != self.locale:
+            if prop == "og:locale:alternate":
+                return
+            localized_lang = attributes.get("lang")
+            if localized_lang:
+                if localized_lang != self.locale:
                     return
                 attributes.pop("lang", None)
             if (attributes.get("http-equiv") or "").lower() == "content-language":
                 attributes["content"] = self.locale
             if prop == "og:locale":
                 attributes["content"] = next(region for code, _, region in LANGUAGES if code == self.locale)
-            if prop == "og:locale:alternate":
-                locale_region = next(region for code, _, region in LANGUAGES if code == self.locale)
-                if attributes.get("content") == locale_region:
-                    return
             if prop in {"og:image", "twitter:image"} and (attributes.get("content") or "").startswith("assets/"):
                 attributes["content"] = f"{BASE_URL}/{attributes['content']}"
 
         if tag == "link":
             rel = (attributes.get("rel") or "").lower()
             if rel == "alternate" and attributes.get("hreflang"):
-                attributes["href"] = f"../{attributes['hreflang']}/"
+                language = attributes["hreflang"]
+                attributes["href"] = self.path_prefix if language == "x-default" else f"{self.path_prefix}{language}/"
             elif rel == "stylesheet" and attributes.get("href") == "__SITE_STYLESHEET__":
-                attributes["href"] = "../assets/site.css"
+                attributes["href"] = f"{self.path_prefix}assets/site.css"
 
         for name in ("href", "src"):
             value = attributes.get(name)
             if value and value.startswith("assets/"):
-                attributes[name] = "../" + value
+                attributes[name] = self.path_prefix + value
         for name in ("alt", "aria-label", "title"):
             value = attributes.get(name)
             if value:
@@ -217,7 +218,10 @@ class StaticPage(HTMLParser):
                 self.skip_select = False
             return
         if tag == "head" and not self.head_closed:
-            self.output.append(f'<link rel="canonical" href="{BASE_URL}/{self.locale}/">')
+            canonical = f"{BASE_URL}/" if self.root else f"{BASE_URL}/{self.locale}/"
+            self.output.append(f'<link rel="canonical" href="{canonical}">')
+            if self.root:
+                self.output.append(make_supported_language_redirect())
             self.head_closed = True
         self.output.append(f"</{tag}>")
 
@@ -253,7 +257,7 @@ class StaticPage(HTMLParser):
             raise ValueError(f"Expected {len(SVG_GLYPHS)} inline icons, found {self.svg_index}.")
         if self.skip_svg or self.skip_select:
             raise ValueError("Unclosed SVG or language picker in source HTML.")
-        return "".join(self.output)
+        return re.sub(r"(?m)^[ \t]+$", "", "".join(self.output))
 
 
 def inject_static_showcase(source: str) -> str:
@@ -362,17 +366,9 @@ def make_runtime_script(source: str, locale: str, translations: dict[str, str]) 
     return script
 
 
-def make_root_redirect() -> str:
+def make_supported_language_redirect() -> str:
     codes = [code for code, _, _ in LANGUAGES]
-    labels = "\n".join(f'<li><a href="./{code}/" lang="{code}">{html.escape(name)}</a></li>' for code, name, _ in LANGUAGES)
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>CDKit — Choose a language</title>
-  <script>
+    return f"""<script>
     (() => {{
       const supported = {json.dumps(codes)};
       const normalize = raw => {{
@@ -385,25 +381,10 @@ def make_root_redirect() -> str:
       }};
       const query = normalize(new URLSearchParams(location.search).get('lang'));
       const browser = [...(navigator.languages || []), navigator.language].map(normalize).find(Boolean);
-      location.replace(`./${{query || browser || 'en'}}/`);
+      const locale = query || browser;
+      if (locale) location.replace(`./${{locale}}/`);
     }})();
-  </script>
-  <noscript><meta http-equiv="refresh" content="0; url=./en/"></noscript>
-  <style>
-    :root {{ color-scheme: dark; font: 16px/1.5 Inter, system-ui, sans-serif; background: #1b1b1b; color: #fff; }}
-    body {{ max-width: 40rem; margin: 8vh auto; padding: 2rem; }}
-    a {{ color: #72a8ff; }} li {{ margin: .5rem 0; }}
-  </style>
-</head>
-<body>
-  <main>
-    <h1>CDKit</h1>
-    <p>Choose a language / 选择语言</p>
-    <ul>{labels}</ul>
-  </main>
-</body>
-</html>
-"""
+</script>"""
 
 
 def main() -> None:
@@ -508,7 +489,11 @@ def main() -> None:
         (DOCS / locale / "index.html").write_text(page, encoding="utf-8")
         (ASSETS / f"site-{locale}.js").write_text(runtime.strip() + "\n", encoding="utf-8")
 
-    (DOCS / "index.html").write_text(make_root_redirect(), encoding="utf-8")
+    root_parser = StaticPage("en", translations.get("en", {}), glyphs, root=True)
+    root_parser.feed(body_template.replace("__SITE_STYLESHEET__", "./assets/site.css"))
+    root_page = root_parser.result()
+    root_page = root_page.replace("</body>", '<script src="./assets/site-en.js" defer></script>\n</body>', 1)
+    (DOCS / "index.html").write_text(root_page, encoding="utf-8")
 
 
 if __name__ == "__main__":
