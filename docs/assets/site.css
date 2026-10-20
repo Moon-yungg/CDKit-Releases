@@ -1327,9 +1327,9 @@
 }
 
 .lang-menu { position: relative; }
-.lang-select { display: flex; align-items: center; justify-content: space-between; gap: 10px; list-style: none; text-align: left; }
+.lang-select { display: flex; align-items: center; justify-content: space-between; gap: 10px; list-style: none; text-align: left; appearance: none; -webkit-appearance: none; }
 .lang-select::-webkit-details-marker { display: none; }
-.lang-select::marker { content: ''; }
+.lang-select::marker { content: none; }
 .lang-chevron { font-size: 16px; }
 .lang-options {
   position: absolute;
