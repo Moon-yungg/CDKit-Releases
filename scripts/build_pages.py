@@ -115,7 +115,8 @@ def language_menu(locale: str, glyphs: dict[str, int], path_prefix: str) -> str:
     ]
     for code, label, _ in LANGUAGES:
         current = ' aria-current="page"' if code == locale else ""
-        lines.append(f'<a class="lang-option" href="{path_prefix}{code}/" lang="{code}" hreflang="{code}"{current}>{html.escape(label)}</a>')
+        href = f"{path_prefix}?manual=language" if code == "en" else f"{path_prefix}{code}/"
+        lines.append(f'<a class="lang-option" href="{href}" lang="{code}" hreflang="{code}"{current}>{html.escape(label)}</a>')
     lines.extend(["</nav>", "</details>"])
     return "\n".join(lines)
 
@@ -183,7 +184,7 @@ class StaticPage(HTMLParser):
             rel = (attributes.get("rel") or "").lower()
             if rel == "alternate" and attributes.get("hreflang"):
                 language = attributes["hreflang"]
-                attributes["href"] = self.path_prefix if language == "x-default" else f"{self.path_prefix}{language}/"
+                attributes["href"] = self.path_prefix if language in {"x-default", "en"} else f"{self.path_prefix}{language}/"
             elif rel == "stylesheet" and attributes.get("href") == "__SITE_STYLESHEET__":
                 attributes["href"] = f"{self.path_prefix}assets/site.css"
 
@@ -370,6 +371,8 @@ def make_supported_language_redirect() -> str:
     codes = [code for code, _, _ in LANGUAGES]
     return f"""<script>
     (() => {{
+      // Only language-menu links carry this flag to keep a manual English choice on the root page.
+      if (new URLSearchParams(location.search).get('manual') === 'language') return;
       const supported = {json.dumps(codes)};
       const normalize = raw => {{
         if (!raw) return null;
@@ -379,10 +382,8 @@ def make_supported_language_redirect() -> str:
         return supported.find(code => code.toLowerCase() === value) ||
           supported.find(code => code.toLowerCase().split('-')[0] === value.split('-')[0]) || null;
       }};
-      const query = normalize(new URLSearchParams(location.search).get('lang'));
       const browser = [...(navigator.languages || []), navigator.language].map(normalize).find(Boolean);
-      const locale = query || browser;
-      if (locale) location.replace(`./${{locale}}/`);
+      if (browser && browser !== 'en') location.replace(`./${{browser}}/`);
     }})();
 </script>"""
 
@@ -446,8 +447,9 @@ def main() -> None:
 
 .lang-menu {{ position: relative; }}
 .lang-select {{ display: flex; align-items: center; justify-content: space-between; gap: 10px; list-style: none; text-align: left; appearance: none; -webkit-appearance: none; }}
-.lang-select::-webkit-details-marker {{ display: none; }}
-.lang-select::marker {{ content: none; }}
+summary.lang-select {{ list-style: none; }}
+summary.lang-select::-webkit-details-marker {{ display: none; }}
+summary.lang-select::marker {{ display: none; content: none; font-size: 0; }}
 .lang-chevron {{ font-size: 16px; }}
 .lang-options {{
   position: absolute;
@@ -466,7 +468,7 @@ def main() -> None:
   backdrop-filter: blur(16px);
 }}
 .lang-menu[open] .lang-options {{ display: grid; gap: 2px; }}
-.lang-option {{ padding: 8px 10px; border-radius: 8px; color: var(--muted); font-size: 13px; }}
+.lang-option {{ padding: 8px 10px; border-radius: 8px; color: var(--muted); font-size: 13px; text-decoration: none; }}
 .lang-option:hover, .lang-option[aria-current='page'] {{ background: var(--surface-2); color: var(--text); }}
 """
     (ASSETS / "site.css").write_text(css.strip() + "\n", encoding="utf-8")
@@ -479,6 +481,8 @@ def main() -> None:
     body_template = inject_static_showcase(body_template)
 
     for locale, _name, _og_locale in LANGUAGES:
+        if locale == "en":
+            continue
         locale_translations = translations.get(locale, {})
         parser = StaticPage(locale, locale_translations, glyphs)
         parser.feed(body_template.replace("__SITE_STYLESHEET__", "../assets/site.css"))

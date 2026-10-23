@@ -94,7 +94,7 @@
 
 
   <link rel="alternate" hreflang="x-default" href="./">
-  <link rel="alternate" hreflang="en" href="./en/">
+  <link rel="alternate" hreflang="en" href="./">
   <link rel="alternate" hreflang="zh-CN" href="./zh-CN/">
   <link rel="alternate" hreflang="zh-TW" href="./zh-TW/">
   <link rel="alternate" hreflang="de" href="./de/">
@@ -112,6 +112,8 @@
   <link rel="stylesheet" href="./assets/site.css">
 <link rel="canonical" href="https://moon-yungg.github.io/CDKit-Releases/"><script>
     (() => {
+      // Only language-menu links carry this flag to keep a manual English choice on the root page.
+      if (new URLSearchParams(location.search).get('manual') === 'language') return;
       const supported = ["en", "zh-CN", "zh-TW", "de", "fr", "ko", "ja", "es", "pt-BR", "ru", "tr"];
       const normalize = raw => {
         if (!raw) return null;
@@ -121,10 +123,8 @@
         return supported.find(code => code.toLowerCase() === value) ||
           supported.find(code => code.toLowerCase().split('-')[0] === value.split('-')[0]) || null;
       };
-      const query = normalize(new URLSearchParams(location.search).get('lang'));
       const browser = [...(navigator.languages || []), navigator.language].map(normalize).find(Boolean);
-      const locale = query || browser;
-      if (locale) location.replace(`./${locale}/`);
+      if (browser && browser !== 'en') location.replace(`./${browser}/`);
     })();
 </script></head>
 
@@ -448,7 +448,7 @@
           <details class="lang-menu">
 <summary class="lang-select" aria-label="Select language"><span>English</span><span class="fluent-icon lang-chevron" aria-hidden="true">&#xF2A2;</span></summary>
 <nav class="lang-options" aria-label="Select language">
-<a class="lang-option" href="./en/" lang="en" hreflang="en" aria-current="page">English</a>
+<a class="lang-option" href="./?manual=language" lang="en" hreflang="en" aria-current="page">English</a>
 <a class="lang-option" href="./zh-CN/" lang="zh-CN" hreflang="zh-CN">简体中文</a>
 <a class="lang-option" href="./zh-TW/" lang="zh-TW" hreflang="zh-TW">繁體中文</a>
 <a class="lang-option" href="./de/" lang="de" hreflang="de">Deutsch</a>

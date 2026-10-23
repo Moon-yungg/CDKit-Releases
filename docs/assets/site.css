@@ -830,30 +830,30 @@
       gap: 12px;
     }
 
-    details {
+    .faq details {
       border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--surface);
       transition: border-color .2s, background .2s;
     }
 
-    details[open] {
+    .faq details[open] {
       border-color: var(--line-strong);
       background: var(--surface-2);
     }
 
-    summary {
+    .faq summary {
       list-style: none;
       cursor: pointer;
       padding: 20px 60px 20px 20px;
       position: relative;
     }
 
-    summary::-webkit-details-marker {
+    .faq summary::-webkit-details-marker {
       display: none;
     }
 
-    summary::after {
+    .faq summary::after {
       content: "";
       position: absolute;
       right: 20px;
@@ -866,17 +866,17 @@
       transition: transform .25s;
     }
 
-    details[open] summary::after {
+    .faq details[open] summary::after {
       transform: translateY(-30%) rotate(-135deg);
     }
 
-    details p {
+    .faq details p {
       margin: 0;
       padding: 0 22px 20px;
       color: var(--muted);
     }
 
-    details a {
+    .faq details a {
       color: var(--sand);
       text-decoration: underline;
       text-underline-offset: 3px;
@@ -1328,8 +1328,9 @@
 
 .lang-menu { position: relative; }
 .lang-select { display: flex; align-items: center; justify-content: space-between; gap: 10px; list-style: none; text-align: left; appearance: none; -webkit-appearance: none; }
-.lang-select::-webkit-details-marker { display: none; }
-.lang-select::marker { content: none; }
+summary.lang-select { list-style: none; }
+summary.lang-select::-webkit-details-marker { display: none; }
+summary.lang-select::marker { display: none; content: none; font-size: 0; }
 .lang-chevron { font-size: 16px; }
 .lang-options {
   position: absolute;
@@ -1348,5 +1349,5 @@
   backdrop-filter: blur(16px);
 }
 .lang-menu[open] .lang-options { display: grid; gap: 2px; }
-.lang-option { padding: 8px 10px; border-radius: 8px; color: var(--muted); font-size: 13px; }
+.lang-option { padding: 8px 10px; border-radius: 8px; color: var(--muted); font-size: 13px; text-decoration: none; }
 .lang-option:hover, .lang-option[aria-current='page'] { background: var(--surface-2); color: var(--text); }
