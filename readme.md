@@ -2,7 +2,7 @@
 
 <h1 align="center">CDKit</h1>
 <p align="center"><b>The modding toolkit for Crimson Desert</b><br>
-Edit the world, sculpt terrain, write quests, add characters – and install it all into the game with one click.</p>
+Edit the world, sculpt terrain, write quests, add characters – and play it all in the game.</p>
 
 <p align="center">
   <a href="https://moon-yungg.github.io/CDKit-Releases/">Website</a> ·
@@ -19,11 +19,14 @@ Edit the world, sculpt terrain, write quests, add characters – and install it 
 2. Unpack it into a folder of your own (not the game folder, not `Program Files`).
 3. Start `CDkit.exe` and follow the [getting started guide](https://github.com/Moon-yungg/CDKit-Releases/wiki/Getting-Started).
 
-CDKit updates itself. **No original game file is changed:** your mods are built into CDKit's own folder, and its small
-runtime `cdkit.asi` (loaded by an ASI loader such as Ultimate ASI Loader in `bin64`) shows them to the game while it
-runs, with the game's package list, texture headers and pack index entries the mods need. Several mods load together
-in a load order; where two of them change the same thing, CDKit lists the conflict and who wins. **Uninstall** takes
-everything out at once, and game updates or Steam's "Verify integrity of game files" no longer remove your mods.
+CDKit updates itself (the Nexus Mods edition does not go online). **No original game file is changed:** the small
+runtime `cdkit.asi` (loaded by an ASI loader such as Ultimate ASI Loader in `bin64`, not included) builds your enabled
+mods together when the game starts – with a loading screen – and shows them to the game. Several mods load together in
+your own order; where two of them change the same thing, CDKit lists the conflict and who wins. Switch a mod off in the
+mod manager and the next start uses the game's own files again.
+
+**Playing mods without CDKit:** download `CDKit-Runtime-<version>.zip` from the release, unzip it into the game folder
+and put the mods (`.cdpkg`) into `bin64\CDKit\mods` – see the guide's page "Playing CDKit mods".
 
 ---
 
