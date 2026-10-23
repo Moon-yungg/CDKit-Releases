@@ -146,7 +146,7 @@
         <div>
           <span class="badge"><b>免費</b><span class="dot"></span><span id="heroBadge">《赤血沙漠》模組製作工具包</span></span>
           <h1 class="serif">重塑 <span class="grad-text">Pywel 的世界</span></h1>
-          <p class="lead">在 3D 中編輯開放世界、塑造地形、撰寫任務、加入你自己的角色——然後一鍵安裝到遊戲中，也能同樣輕鬆地移除。</p>
+          <p class="lead">在 3D 中編輯開放世界、塑造地形、撰寫任務、加入你自己的角色——然後啟用模組即可開玩：CDKit 的執行階段會在下次啟動時把它帶入遊戲，遊戲本身的檔案保持不變。</p>
           <div class="hero-ctas">
             <a class="btn btn-lg btn-primary" id="downloadBtn" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">
               <span class="fluent-icon" aria-hidden="true">&#xF151;</span>
@@ -169,7 +169,7 @@
         <div class="stats reveal">
           <div class="stat"><strong class="grad-text">0</strong><span>個原始游戲文件被修改</span></div>
           <div class="stat"><strong class="grad-text" data-count="2100000" data-suffix="+">2.1M+</strong><span>可瀏覽和替換的游戲文件</span></div>
-          <div class="stat"><strong class="grad-text" data-count="7">7</strong><span>個任務區域：世界、劇情、資料……</span></div>
+          <div class="stat"><strong class="grad-text" data-count="8">8</strong><span>個任務區域：世界、劇情、資料……</span></div>
           <div class="stat"><strong class="grad-text" data-count="11">11</strong><span>種編輯器語言</span></div>
         </div>
       </div>
@@ -195,7 +195,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF00E8;</span></div>
             <h3>地形與植被</h3>
-            <p>抬高、降低或平整地面，用筆刷繪制材質和森林。構建時導航數據與世界地圖會同步更新。</p>
+            <p>抬高、降低或整平地面，用筆刷繪製材質和森林。導航資料與世界地圖會隨你的修改一同更新。</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE178;</span></div>
@@ -237,7 +237,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
             <h3>現代化的編輯器</h3>
-            <p>七個任務區域，每個物品、任務和 NPC 都有自己的分頁，命令面板可以找到一切，當機後可復原——深色或淺色主題任選。</p>
+            <p>八個任務區域（開始、搜尋、世界、專案、劇本、資料、角色、資源），每個物品、任務和 NPC 都在獨立的分頁中，命令面板可呼叫一切，並支援當機復原——深色或淺色主題任選。</p>
           </article>
         </div>
       </div>
@@ -273,7 +273,7 @@
         <div class="section-head center reveal">
           <span class="eyebrow">運作方式</span>
           <h2 class="serif">從創意到游戲內 <span class="grad-text">只需三步</span></h2>
-          <p>你的工作內容保存在項目文件夾中。CDKit 會將其構建為額外的數據包，讓游戲在自身數據之上加載。</p>
+          <p>你的作品保存在專案資料夾中。CDKit 的執行階段（cdkit.asi）會在遊戲啟動時建置你啟用的模組，並將它們疊加在遊戲本身的資料之上載入。</p>
         </div>
         <div class="steps">
           <div class="step reveal">
@@ -285,8 +285,8 @@
             <p>使用世界編輯器、任務設計器、物品編輯器和各類助手。任何操作都可撤銷，可在 3D 中預覽，也可通過游玩模式測試。</p>
           </div>
           <div class="step reveal">
-            <h3>一鍵安裝</h3>
-            <p>關閉游戲，點擊 <b>安裝</b>，然後開始游戲。改變主意了？ <b>卸載</b> 即可讓游戲恢復到原來的狀態。</p>
+            <h3>遊玩與分享</h3>
+            <p>啟動遊戲：執行階段會在載入畫面後建置你啟用的模組。在模組管理器中關閉某個模組，或把它發佈為一個封包供其他玩家使用。</p>
           </div>
         </div>
       </div>
@@ -298,27 +298,27 @@
         <div class="reveal">
           <span class="eyebrow">從設計上確保安全</span>
           <h2 class="serif">你的遊戲始終 <span class="grad-text">可以還原</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">模組是位於遊戲資料夾之外的獨立封包。CDKit 的小型執行階段（cdkit.asi）在遊戲執行時把它們提供給遊戲——不會修改任何一個原始遊戲檔案。解除安裝即刻移除，遊戲更新與 Steam 檔案檢查不再刪除你的模組，多個模組可以同時載入，並列出每一處衝突。</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">模組與遊戲本身的檔案保持分離。CDKit 的小型執行階段（cdkit.asi，由 ASI 載入器載入）在遊戲啟動時建置你啟用的模組，並在遊戲執行時把它們提供給遊戲——不會修改任何一個原始遊戲檔案。在模組管理器中關閉的模組會在下次啟動時消失，多個模組可以依你自己的順序同時載入，並列出每一處衝突。</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>非破壞式</h4>
-                <p>模組覆蓋加載在游戲之上，一鍵即可移除。</p>
+                <p>模組疊加在遊戲之上載入。在模組管理器中關閉它們，下次啟動時就會使用遊戲本身的檔案。</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF190;</span></div>
               <div>
                 <h4>可適應游戲更新</h4>
-                <p>修改以“變更”而非文件副本的形式保存——游戲更新後重新構建即可。</p>
+                <p>修改以修改本身的形式儲存，而不是副本。CDKit 會察覺遊戲更新，執行階段會在下次啟動時重新建置你的模組。</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF151;</span></div>
               <div>
                 <h4>自動更新</h4>
-                <p>新版本會連同更新說明顯示在啓動頁——一鍵完成校驗下載並重啓。</p>
+                <p>在標準版中，新版本會連同更新說明出現在開始頁面上——一鍵操作，下載經過驗證，重新啟動即可。</p>
               </div>
             </div>
           </div>
@@ -365,11 +365,11 @@
           </details>
           <details>
             <summary>它會損壞游戲或存檔嗎？</summary>
-            <p>不會修改任何原始遊戲檔案。CDKit 將你的模組建置到它自己的資料夾中，其執行階段 cdkit.asi（由 bin64 中的 ASI 載入器載入）在遊戲執行時把它們提供給遊戲。解除安裝即刻移除一切，遊戲更新或 Steam 的「驗證遊戲檔案的完整性」不再刪除你的模組。遊玩模式會阻擋存檔，測試期間你的存檔保持安全。</p>
+            <p>不會修改任何原始遊戲檔案。執行階段 cdkit.asi（由 bin64 中的 ASI 載入器載入）會在遊戲啟動時建置你啟用的模組並顯示載入畫面，然後在遊戲執行時把它們提供給遊戲。在模組管理器中選擇「停用此模組」或「停用所有模組」即可關閉它們，下次啟動時就會使用遊戲本身的檔案。遊玩模式會阻擋存檔，測試期間你的存檔保持安全。</p>
           </details>
           <details>
             <summary>我需要什麼？</summary>
-            <p>Windows 10 或 11（64 位）、Steam 版《赤血沙漠》以及支持 DirectX 12 的顯卡。游玩模式和實時預覽還會使用 World Builder 插件；導入 MetaHuman/Fab 包需要 Unreal Engine。
+            <p>Windows 10 或 11（64 位元）、Steam 版《赤血沙漠》、支援 DirectX 12 的顯示卡，以及 Microsoft Edge WebView2 Runtime（Windows 11 和所有保持更新的 Windows 10 均已內建）。要遊玩模組，遊戲的 bin64 資料夾中需要一個 ASI 載入器，例如 Ultimate ASI Loader（不隨附）。遊玩模式和即時預覽還會使用 World Builder 外掛程式；匯入 MetaHuman/Fab 封包需要 Unreal Engine。
             </p>
           </details>
           <details>
@@ -378,11 +378,19 @@
           </details>
           <details>
             <summary>游戲更新後會怎樣？</summary>
-            <p>Steam 會重置游戲的數據包列表，因此模組會暫時失效。在 CDKit 中打開項目，點擊 Build 和 Install——絕大多數情況下你的修改都可以繼續使用。</p>
+            <p>CDKit 會察覺新的遊戲版本，並顯示受影響的專案。執行階段會在下次啟動時針對更新後的遊戲重新建置你的模組——無需重新安裝，你的修改幾乎在所有情況下都能保留。</p>
           </details>
           <details>
             <summary>我可以分享自己的模組嗎？</summary>
-            <p>可以。分享你的項目文件夾；其他人在 CDKit 中打開並點擊 Install，CDKit 會針對他們的游戲版本重新構建。</p>
+            <p>可以。「發佈模組」會把你的模組寫成一個 .cdpkg 封包，並附帶一個用於模組網站的 ZIP。其他人用「匯入模組」加入它，拖曳模組排出自己的載入順序，檢查衝突，還可以更新模組或復原更新。</p>
+          </details>
+          <details>
+            <summary>玩家沒有 CDKit 也能使用我的模組嗎？</summary>
+            <p>可以。他們從 GitHub 發佈頁下載 CDKit Runtime（cdkit.asi 和一個 mods 資料夾），解壓縮到遊戲資料夾，加上一個 ASI 載入器，再把 .cdpkg 檔案放進 bin64\CDKit\mods。</p>
+          </details>
+          <details>
+            <summary>在哪裡下載 CDKit？</summary>
+            <p>共有兩個版本，編輯器完全相同：標準版來自 GitHub 發佈頁，內建自動更新；Nexus 版發佈在 Nexus Mods 上，它本身不建立任何網路連線，透過其 Nexus 頁面更新。</p>
           </details>
           <details>
             <summary>要去哪裡取得協助？</summary>
@@ -407,6 +415,8 @@
               <span class="fluent-icon" aria-hidden="true">&#xF286;</span>
               加入 Discord
             </a>
+            <!-- Nexus edition: placeholder link to the game's Nexus Mods page until the CDKit mod page exists -->
+            <a class="btn btn-lg" href="https://www.nexusmods.com/crimsondesert" target="_blank" rel="noopener">在 Nexus Mods 取得</a>
           </div>
         </div>
       </div>

@@ -146,7 +146,7 @@
         <div>
           <span class="badge"><b>ÜCRETSİZ</b><span class="dot"></span><span id="heroBadge">Crimson Desert için modlama araç seti</span></span>
           <h1 class="serif">Yeniden şekillendir <span class="grad-text">Pywel dünyasını</span></h1>
-          <p class="lead">Açık dünyayı 3B olarak düzenleyin, araziyi şekillendirin, görevler yazın, kendi karakterlerinizi ekleyin – sonra her şeyi tek tıkla oyuna kurun ve aynı kolaylıkla kaldırın.</p>
+          <p class="lead">Açık dünyayı 3B olarak düzenleyin, araziyi şekillendirin, görevler yazın, kendi karakterlerinizi ekleyin – sonra modunuzu açın ve oynayın: CDKit'in çalışma zamanı onu bir sonraki başlatmada oyuna getirir, oyunun kendi dosyaları değişmeden kalır.</p>
           <div class="hero-ctas">
             <a class="btn btn-lg btn-primary" id="downloadBtn" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">
               <span class="fluent-icon" aria-hidden="true">&#xF151;</span>
@@ -169,7 +169,7 @@
         <div class="stats reveal">
           <div class="stat"><strong class="grad-text">0</strong><span>değiştirilen orijinal oyun dosyası</span></div>
           <div class="stat"><strong class="grad-text" data-count="2100000" data-suffix="+">2.1M+</strong><span>göz atılabilir ve değiştirilebilir oyun dosyası</span></div>
-          <div class="stat"><strong class="grad-text" data-count="7">7</strong><span>çalışma alanı: dünya, hikâye, veri …</span></div>
+          <div class="stat"><strong class="grad-text" data-count="8">8</strong><span>çalışma alanı: dünya, hikâye, veri …</span></div>
           <div class="stat"><strong class="grad-text" data-count="11">11</strong><span>editör dili</span></div>
         </div>
       </div>
@@ -195,7 +195,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF00E8;</span></div>
             <h3>Arazi ve bitki örtüsü</h3>
-            <p>Zemini yükseltin, alçaltın veya düzleştirin; fırçalarla malzeme ve orman boyayın. Derleme sırasında navigasyon ve dünya haritası güncellenir.</p>
+            <p>Zemini fırçalarla yükseltin, alçaltın ve düzleştirin, malzemeleri ve ormanları boyayın. Navigasyon ve dünya haritası değişikliklerinizi izler.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE178;</span></div>
@@ -237,7 +237,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
             <h3>Modern bir editör</h3>
-            <p>Yedi çalışma alanı, her eşya, görev ve NPC kendi sekmesinde, her şey için bir komut paleti ve çökme sonrası kurtarma – koyu ya da açık temada.</p>
+            <p>Sekiz görev alanı (Başlangıç, Ara, Dünya, Proje, Hikâye, Veri, Karakterler, Varlıklar), her eşya, görev ve NPC kendi sekmesinde, her şey için bir komut paleti ve çökme kurtarma – koyu veya açık temada.</p>
           </article>
         </div>
       </div>
@@ -273,7 +273,7 @@
         <div class="section-head center reveal">
           <span class="eyebrow">Nasıl çalışır</span>
           <h2 class="serif">Fikirden oyuna <span class="grad-text">üç adımda</span></h2>
-          <p>Çalışmanız bir proje klasöründe tutulur. CDKit bunu oyunun kendi verilerinin üzerinde yüklediği ek bir pakete dönüştürür.</p>
+          <p>Çalışmanız bir proje klasöründe durur. CDKit'in çalışma zamanı (cdkit.asi) oyun başlarken etkin modlarınızı derler ve onları oyunun kendi verilerinin üzerine yükler.</p>
         </div>
         <div class="steps">
           <div class="step reveal">
@@ -285,8 +285,8 @@
             <p>Dünya editörünü, görev tasarımcısını, eşya editörünü ve asistanları kullanın. Her şeyi geri alın, 3D önizleme yapın ve oyun modunda test edin.</p>
           </div>
           <div class="step reveal">
-            <h3>Tek tıkla kur</h3>
-            <p>Oyunu kapatın ve <b>Kur</b>düğmesine tıklayıp oynayın. Fikriniz mi değişti? <b>Kaldır</b> oyunu tam olarak eski haline döndürür.</p>
+            <h3>Oyna ve paylaş</h3>
+            <p>Oyunu başlatın: çalışma zamanı etkin modlarınızı bir yükleme ekranının arkasında derler. Bir modu mod yöneticisinden kapatın ya da diğer oyuncular için tek bir paket olarak yayımlayın.</p>
           </div>
         </div>
       </div>
@@ -298,27 +298,27 @@
         <div class="reveal">
           <span class="eyebrow">Güvenlik tasarımın parçası</span>
           <h2 class="serif">Oyununuz her zaman <span class="grad-text">geri yüklenebilir</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">Modlar, oyun klasörünün dışında ayrı paketlerdir. CDKit'in küçük çalışma zamanı (cdkit.asi) onları oyun çalışırken oyuna gösterir – oyunun tek bir orijinal dosyası bile değiştirilmez. Kaldırma onları anında çıkarır, oyun güncellemeleri ve Steam'in dosya denetimi artık modlarınızı silmez ve birden çok mod, her çakışma listelenerek birlikte yüklenir.</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">Modlar oyunun kendi dosyalarından ayrı durur. CDKit'in küçük çalışma zamanı (cdkit.asi, bir ASI yükleyicisi tarafından yüklenir) oyun başlarken etkin modlarınızı derler ve oyun çalışırken onları oyuna gösterir – oyunun tek bir orijinal dosyası bile değiştirilmez. Mod yöneticisinde kapatılan bir mod bir sonraki başlatmada gider ve birden çok mod, her çakışma listelenerek kendi sıranızda birlikte yüklenir.</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>Tahribatsız</h4>
-                <p>Modlar oyunun üzerine yüklenir. Tek tıkla kaldırabilirsiniz.</p>
+                <p>Modlar oyunun üzerine yüklenir. Onları mod yöneticisinden kapatın, bir sonraki başlatma oyunun dosyalarını kullanır.</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF190;</span></div>
               <div>
                 <h4>Oyun güncellemelerine dayanır</h4>
-                <p>Değişiklikler kopya olarak değil değişiklik olarak saklanır; yama sonrası yeniden derlemeniz yeterlidir.</p>
+                <p>Değişiklikler kopya olarak değil, değişiklik olarak saklanır. CDKit bir oyun güncellemesini fark eder ve çalışma zamanı modlarınızı bir sonraki başlatmada yeniden derler.</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF151;</span></div>
               <div>
                 <h4>Kendini günceller</h4>
-                <p>Yeni sürümler başlangıç sayfasında sürüm notlarıyla görünür; tek tık, doğrulanmış indirme ve yeniden başlatma.</p>
+                <p>Standart sürümde yeni sürümler, sürüm notlarıyla birlikte başlangıç sayfasına gelir – tek tık, doğrulanmış indirme, yeniden başlatma.</p>
               </div>
             </div>
           </div>
@@ -365,11 +365,11 @@
           </details>
           <details>
             <summary>Oyunu veya kayıt dosyalarını bozabilir mi?</summary>
-            <p>Oyunun hiçbir orijinal dosyası değiştirilmez. CDKit modlarınızı kendi klasörüne derler ve çalışma zamanı cdkit.asi (bin64'teki bir ASI yükleyicisi tarafından yüklenir) onları oyun çalışırken oyuna gösterir. Kaldırma her şeyi anında çıkarır; oyun güncellemeleri veya Steam'in “Oyun dosyalarının bütünlüğünü doğrula” özelliği artık modlarınızı silmez. Oyun modu kaydetmeyi engeller, böylece test ederken kayıtlarınız güvende kalır.</p>
+            <p>Oyunun hiçbir orijinal dosyası değiştirilmez. Çalışma zamanı cdkit.asi (bin64'teki bir ASI yükleyicisi tarafından yüklenir) oyun başlarken bir yükleme ekranıyla etkin modlarınızı derler ve oyun çalışırken onları oyuna gösterir. Mod yöneticisindeki “Bu modu devre dışı bırak” veya “Tüm modları devre dışı bırak” onları kapatır ve bir sonraki başlatma oyunun kendi dosyalarını kullanır. Oyun modu kaydetmeyi engeller, böylece test ederken kayıtlarınız güvende kalır.</p>
           </details>
           <details>
             <summary>Neye ihtiyacım var?</summary>
-            <p>Windows 10 veya 11 (64 bit), Steam’de Crimson Desert ve DirectX 12 destekli bir ekran kartı gerekir. Oyun modu ve canlı önizleme ayrıca World Builder eklentisini kullanır; MetaHuman/Fab paketlerini içe aktarmak için Unreal Engine gerekir.
+            <p>Windows 10 veya 11 (64 bit), Steam’de Crimson Desert, DirectX 12 destekli bir ekran kartı ve Microsoft Edge WebView2 Runtime (Windows 11'de ve güncel her Windows 10'da bulunur) gerekir. Modlarla oynamak için oyunun bin64 klasöründe bir ASI yükleyicisi gerekir, örneğin Ultimate ASI Loader (dahil değildir). Oyun modu ve canlı önizleme ayrıca World Builder eklentisini kullanır; MetaHuman/Fab paketlerini içe aktarmak için Unreal Engine gerekir.
             </p>
           </details>
           <details>
@@ -378,11 +378,19 @@
           </details>
           <details>
             <summary>Oyun güncellendiğinde ne olur?</summary>
-            <p>Steam oyunun paket listesini sıfırlar, bu yüzden modlar devre dışı kalır. Projenizi CDKit’te açın, Build ve Install düğmelerine tıklayın; neredeyse her durumda değişiklikleriniz korunur.</p>
+            <p>CDKit yeni oyun sürümünü fark eder ve hangi projeleri etkilediğini gösterir. Çalışma zamanı modlarınızı bir sonraki başlatmada güncellenmiş oyuna göre yeniden derler – yeniden kurulacak bir şey yoktur ve değişiklikleriniz neredeyse her durumda korunur.</p>
           </details>
           <details>
             <summary>Modlarımı paylaşabilir miyim?</summary>
-            <p>Evet. Proje klasörünüzü paylaşın; diğer kullanıcılar CDKit’te açıp Install’a tıklar ve CDKit onların oyun sürümü için yeniden derler.</p>
+            <p>Evet. “Modu yayımla”, modunuzu tek bir .cdpkg paketi ve mod siteleri için bir ZIP olarak yazar. Diğerleri onu “Mod içe aktar” ile ekler, modlarını sürükleyerek kendi yükleme sıralarını belirler, çakışmaları denetler ve bir modu güncelleyebilir ya da bir güncellemeyi geri alabilir.</p>
+          </details>
+          <details>
+            <summary>Oyuncular modlarımı CDKit olmadan kullanabilir mi?</summary>
+            <p>Evet. GitHub sürümlerinden CDKit Runtime'ı (cdkit.asi ve bir mods klasörü) indirir, oyun klasörüne açar, bir ASI yükleyicisi ekler ve .cdpkg dosyalarını bin64\CDKit\mods içine koyarlar.</p>
+          </details>
+          <details>
+            <summary>CDKit'i nereden indirebilirim?</summary>
+            <p>Aynı düzenleyicilere sahip iki sürüm vardır: GitHub sürümlerindeki standart sürüm yerleşik güncellemelerle gelir; Nexus Mods'taki Nexus sürümü kendiliğinden internete bağlanmaz ve Nexus sayfası üzerinden güncellenir.</p>
           </details>
           <details>
             <summary>Nereden yardım alabilirim?</summary>
@@ -407,6 +415,8 @@
               <span class="fluent-icon" aria-hidden="true">&#xF286;</span>
               Discord’a katıl
             </a>
+            <!-- Nexus edition: placeholder link to the game's Nexus Mods page until the CDKit mod page exists -->
+            <a class="btn btn-lg" href="https://www.nexusmods.com/crimsondesert" target="_blank" rel="noopener">Nexus Mods'tan edinin</a>
           </div>
         </div>
       </div>

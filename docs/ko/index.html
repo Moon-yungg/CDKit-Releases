@@ -146,7 +146,7 @@
         <div>
           <span class="badge"><b>무료</b><span class="dot"></span><span id="heroBadge">Crimson Desert 모딩 툴킷</span></span>
           <h1 class="serif">새롭게 바꾸는 <span class="grad-text">Pywel의 세계</span></h1>
-          <p class="lead">오픈 월드를 3D로 편집하고, 지형을 다듬고, 퀘스트를 쓰고, 나만의 캐릭터를 추가하세요 – 그런 다음 한 번의 클릭으로 모두 게임에 설치하고, 똑같이 쉽게 제거할 수 있습니다.</p>
+          <p class="lead">오픈 월드를 3D로 편집하고, 지형을 다듬고, 퀘스트를 쓰고, 나만의 캐릭터를 추가하세요 – 그런 다음 모드를 켜고 플레이하면 됩니다. CDKit 런타임이 다음 실행 때 모드를 게임에 불러오며, 게임 자체 파일은 바뀌지 않습니다.</p>
           <div class="hero-ctas">
             <a class="btn btn-lg btn-primary" id="downloadBtn" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">
               <span class="fluent-icon" aria-hidden="true">&#xF151;</span>
@@ -169,7 +169,7 @@
         <div class="stats reveal">
           <div class="stat"><strong class="grad-text">0</strong><span>수정되는 원본 게임 파일</span></div>
           <div class="stat"><strong class="grad-text" data-count="2100000" data-suffix="+">2.1M+</strong><span>탐색 및 교체 가능한 게임 파일</span></div>
-          <div class="stat"><strong class="grad-text" data-count="7">7</strong><span>개 작업 영역: 월드, 스토리, 데이터 …</span></div>
+          <div class="stat"><strong class="grad-text" data-count="8">8</strong><span>개 작업 영역: 월드, 스토리, 데이터 …</span></div>
           <div class="stat"><strong class="grad-text" data-count="11">11</strong><span>편집기 언어</span></div>
         </div>
       </div>
@@ -195,7 +195,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF00E8;</span></div>
             <h3>지형 및 식생</h3>
-            <p>지면을 높이거나 낮추고 평탄화하며, 브러시로 재질과 숲을 칠하세요. 빌드할 때 내비게이션과 월드 맵도 함께 업데이트됩니다.</p>
+            <p>브러시로 지면을 높이고, 낮추고, 평평하게 만들고 재질과 숲을 칠하세요. 내비게이션과 월드 맵이 변경 사항을 따라갑니다.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE178;</span></div>
@@ -237,7 +237,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
             <h3>현대적인 에디터</h3>
-            <p>일곱 개의 작업 영역, 아이템·퀘스트·NPC마다 각자의 탭, 모든 것을 찾는 명령 팔레트, 충돌 후 복구 – 다크 또는 라이트 테마로.</p>
+            <p>여덟 개의 작업 영역(시작, 검색, 세계, 프로젝트, 스토리, 데이터, 캐릭터, 에셋), 아이템·퀘스트·NPC마다 별도 탭, 모든 기능을 위한 명령 팔레트와 충돌 복구 – 어두운 테마와 밝은 테마로.</p>
           </article>
         </div>
       </div>
@@ -273,7 +273,7 @@
         <div class="section-head center reveal">
           <span class="eyebrow">작동 방식</span>
           <h2 class="serif">아이디어에서 게임까지 <span class="grad-text">세 단계로</span></h2>
-          <p>작업 내용은 프로젝트 폴더에 저장됩니다. CDKit은 이를 게임이 자체 데이터 위에 추가로 불러오는 패키지로 만듭니다.</p>
+          <p>작업은 프로젝트 폴더에 저장됩니다. CDKit 런타임(cdkit.asi)이 게임 시작 시 활성화된 모드를 빌드하고 게임 자체 데이터 위에 불러옵니다.</p>
         </div>
         <div class="steps">
           <div class="step reveal">
@@ -285,8 +285,8 @@
             <p>월드 편집기, 퀘스트 디자이너, 아이템 편집기와 어시스턴트를 사용하세요. 무엇이든 실행 취소하고, 3D로 미리 보고, 플레이 모드에서 테스트할 수 있습니다.</p>
           </div>
           <div class="step reveal">
-            <h3>한 번의 클릭으로 설치</h3>
-            <p>게임을 닫고 <b>설치</b>를 클릭한 뒤 플레이하세요. 마음이 바뀌었나요? <b>제거</b> 를 누르면 게임이 정확히 원래 상태로 돌아갑니다.</p>
+            <h3>플레이하고 공유하기</h3>
+            <p>게임을 시작하세요. 런타임이 로딩 화면 뒤에서 활성화된 모드를 빌드합니다. 모드 관리자에서 모드를 끄거나, 다른 플레이어를 위해 하나의 패키지로 게시할 수 있습니다.</p>
           </div>
         </div>
       </div>
@@ -298,27 +298,27 @@
         <div class="reveal">
           <span class="eyebrow">안전을 고려한 설계</span>
           <h2 class="serif">게임은 언제든 <span class="grad-text">되돌릴 수 있습니다</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">모드는 게임 폴더 밖에 있는 별도 패키지입니다. CDKit의 작은 런타임(cdkit.asi)이 실행 중인 게임에 모드를 보여 주므로 게임의 원본 파일은 하나도 바뀌지 않습니다. 제거하면 즉시 빠지고, 게임 업데이트나 Steam 파일 검사로 모드가 사라지지 않으며, 여러 모드를 모든 충돌 목록과 함께 동시에 불러올 수 있습니다.</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">모드는 게임 자체 파일과 분리되어 있습니다. CDKit의 작은 런타임(cdkit.asi, ASI 로더가 불러옴)이 게임 시작 시 활성화된 모드를 빌드하고 실행 중인 게임에 보여 주므로 게임의 원본 파일은 하나도 바뀌지 않습니다. 모드 관리자에서 끈 모드는 다음 실행 때 사라지며, 여러 모드를 원하는 순서로 모든 충돌 목록과 함께 동시에 불러올 수 있습니다.</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>비파괴 방식</h4>
-                <p>모드는 게임 위에 추가로 로드됩니다. 한 번의 클릭으로 제거할 수 있습니다.</p>
+                <p>모드는 게임 위에 불러옵니다. 모드 관리자에서 끄면 다음 실행부터 게임 파일을 그대로 사용합니다.</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF190;</span></div>
               <div>
                 <h4>게임 업데이트에도 유지</h4>
-                <p>변경 사항은 복사본이 아니라 변경 내역으로 저장됩니다. 패치 후 다시 빌드하면 끝입니다.</p>
+                <p>변경 사항은 복사본이 아닌 변경 내용 그대로 저장됩니다. CDKit이 게임 업데이트를 감지하면 런타임이 다음 실행 때 모드를 다시 빌드합니다.</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF151;</span></div>
               <div>
                 <h4>자동 업데이트</h4>
-                <p>새 버전은 시작 페이지에 릴리스 노트와 함께 표시됩니다. 한 번의 클릭으로 검증된 다운로드 후 재시작할 수 있습니다.</p>
+                <p>표준 에디션에서는 새 버전이 릴리스 노트와 함께 시작 페이지에 표시됩니다 – 한 번의 클릭, 검증된 다운로드, 재시작.</p>
               </div>
             </div>
           </div>
@@ -365,11 +365,11 @@
           </details>
           <details>
             <summary>게임이나 세이브 파일이 망가질 수 있나요?</summary>
-            <p>게임의 원본 파일은 하나도 바뀌지 않습니다. CDKit은 모드를 자체 폴더에 빌드하고, 런타임 cdkit.asi(bin64의 ASI 로더가 불러옴)가 실행 중인 게임에 모드를 보여 줍니다. 제거하면 모든 것이 즉시 빠지며, 게임 업데이트나 Steam의 '게임 파일 무결성 확인'으로 모드가 사라지지 않습니다. 플레이 모드는 저장을 막으므로 테스트하는 동안 저장 파일은 안전합니다.</p>
+            <p>게임의 원본 파일은 하나도 바뀌지 않습니다. 런타임 cdkit.asi(bin64의 ASI 로더가 불러옴)가 게임 시작 시 로딩 화면과 함께 활성화된 모드를 빌드하고 실행 중인 게임에 보여 줍니다. 모드 관리자에서 '이 모드 비활성화' 또는 '모든 모드 비활성화'를 누르면 모드가 꺼지고, 다음 실행부터 게임 자체 파일을 사용합니다. 플레이 모드는 저장을 막으므로 테스트하는 동안 저장 파일은 안전합니다.</p>
           </details>
           <details>
             <summary>무엇이 필요한가요?</summary>
-            <p>Windows 10 또는 11(64비트), Steam의 Crimson Desert, DirectX 12 그래픽 카드가 필요합니다. 플레이 모드와 실시간 미리보기에는 World Builder 플러그인이 추가로 사용되며, MetaHuman/Fab 패키지를 가져오려면 Unreal Engine이 필요합니다.
+            <p>Windows 10 또는 11(64비트), Steam의 Crimson Desert, DirectX 12 그래픽 카드, Microsoft Edge WebView2 Runtime(Windows 11과 최신 상태의 모든 Windows 10에 포함)이 필요합니다. 모드로 플레이하려면 게임의 bin64 폴더에 ASI 로더(예: Ultimate ASI Loader, 포함되지 않음)가 있어야 합니다. 플레이 모드와 실시간 미리보기에는 World Builder 플러그인이 추가로 사용되며, MetaHuman/Fab 패키지를 가져오려면 Unreal Engine이 필요합니다.
             </p>
           </details>
           <details>
@@ -378,11 +378,19 @@
           </details>
           <details>
             <summary>게임이 업데이트되면 어떻게 되나요?</summary>
-            <p>Steam이 게임 패키지 목록을 초기화하므로 모드가 비활성화됩니다. CDKit에서 프로젝트를 열고 Build와 Install을 클릭하면 대부분의 경우 변경 사항을 그대로 이어갈 수 있습니다.</p>
+            <p>CDKit이 새 게임 버전을 감지하고 영향을 받는 프로젝트를 보여 줍니다. 런타임이 다음 실행 때 업데이트된 게임에 맞춰 모드를 다시 빌드하므로 다시 설치할 필요가 없고, 변경 사항은 거의 모든 경우 그대로 유지됩니다.</p>
           </details>
           <details>
             <summary>모드를 공유할 수 있나요?</summary>
-            <p>네. 프로젝트 폴더를 공유하면 다른 사용자가 CDKit에서 열고 Install을 클릭할 수 있으며, CDKit이 해당 게임 버전에 맞게 다시 빌드합니다.</p>
+            <p>네. '모드 게시'는 모드를 하나의 .cdpkg 패키지와 모드 사이트용 ZIP으로 만듭니다. 다른 사람은 '모드 가져오기'로 추가하고, 끌어서 자신만의 로드 순서를 정하고, 충돌을 확인하며, 모드를 업데이트하거나 업데이트를 되돌릴 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>CDKit 없이도 플레이어가 내 모드를 쓸 수 있나요?</summary>
+            <p>네. GitHub 릴리스에서 CDKit Runtime(cdkit.asi와 mods 폴더)을 내려받아 게임 폴더에 압축을 풀고, ASI 로더를 추가한 뒤 .cdpkg 파일을 bin64\CDKit\mods에 넣으면 됩니다.</p>
+          </details>
+          <details>
+            <summary>CDKit은 어디서 받나요?</summary>
+            <p>편집기가 같은 두 가지 에디션이 있습니다. GitHub 릴리스의 표준 에디션은 업데이트 기능이 내장되어 있고, Nexus Mods의 Nexus 에디션은 자체적으로 인터넷에 연결하지 않으며 Nexus 페이지를 통해 업데이트됩니다.</p>
           </details>
           <details>
             <summary>도움은 어디에서 받을 수 있나요?</summary>
@@ -407,6 +415,8 @@
               <span class="fluent-icon" aria-hidden="true">&#xF286;</span>
               Discord 참여
             </a>
+            <!-- Nexus edition: placeholder link to the game's Nexus Mods page until the CDKit mod page exists -->
+            <a class="btn btn-lg" href="https://www.nexusmods.com/crimsondesert" target="_blank" rel="noopener">Nexus Mods에서 받기</a>
           </div>
         </div>
       </div>

@@ -146,7 +146,7 @@
         <div>
           <span class="badge"><b>GRÁTIS</b><span class="dot"></span><span id="heroBadge">O kit de ferramentas de modding para Crimson Desert</span></span>
           <h1 class="serif">Redefina o <span class="grad-text">mundo de Pywel</span></h1>
-          <p class="lead">Edite o mundo aberto em 3D, esculpa o terreno, escreva missões, traga seus próprios personagens – depois instale tudo no jogo com um único clique e remova com a mesma facilidade.</p>
+          <p class="lead">Edite o mundo aberto em 3D, esculpa o terreno, escreva missões, traga seus próprios personagens – depois ative seu mod e jogue: o runtime do CDKit o leva ao jogo na próxima inicialização, e os arquivos do próprio jogo continuam intactos.</p>
           <div class="hero-ctas">
             <a class="btn btn-lg btn-primary" id="downloadBtn" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">
               <span class="fluent-icon" aria-hidden="true">&#xF151;</span>
@@ -169,7 +169,7 @@
         <div class="stats reveal">
           <div class="stat"><strong class="grad-text">0</strong><span>arquivos originais do jogo alterados</span></div>
           <div class="stat"><strong class="grad-text" data-count="2100000" data-suffix="+">2.1M+</strong><span>arquivos do jogo para explorar e substituir</span></div>
-          <div class="stat"><strong class="grad-text" data-count="7">7</strong><span>áreas de trabalho: mundo, história, dados …</span></div>
+          <div class="stat"><strong class="grad-text" data-count="8">8</strong><span>áreas de trabalho: mundo, história, dados …</span></div>
           <div class="stat"><strong class="grad-text" data-count="11">11</strong><span>idiomas do editor</span></div>
         </div>
       </div>
@@ -195,7 +195,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF00E8;</span></div>
             <h3>Terreno e vegetação</h3>
-            <p>Eleve, abaixe ou nivele o terreno e pinte materiais e florestas com pincéis. A navegação e o mapa-múndi são atualizados ao compilar.</p>
+            <p>Eleve, abaixe e nivele o terreno, pinte materiais e florestas com pincéis. A navegação e o mapa do mundo acompanham suas mudanças.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE178;</span></div>
@@ -237,7 +237,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
             <h3>Um editor moderno</h3>
-            <p>Sete áreas de trabalho, cada item, missão e NPC em sua própria aba, uma paleta de comandos para tudo e recuperação após falhas – em tema escuro ou claro.</p>
+            <p>Oito áreas de trabalho (Início, Pesquisar, Mundo, Projeto, História, Dados, Personagens, Recursos), cada item, missão e NPC em sua própria aba, uma paleta de comandos para tudo e recuperação após falhas – em tema escuro ou claro.</p>
           </article>
         </div>
       </div>
@@ -273,7 +273,7 @@
         <div class="section-head center reveal">
           <span class="eyebrow">Como funciona</span>
           <h2 class="serif">Da ideia ao jogo <span class="grad-text">em três passos</span></h2>
-          <p>Seu trabalho fica em uma pasta de projeto. O CDKit o transforma em um pacote extra que o jogo carrega sobre seus próprios dados.</p>
+          <p>Seu trabalho fica em uma pasta de projeto. O runtime do CDKit (cdkit.asi) compila seus mods ativados quando o jogo inicia e os carrega sobre os dados do próprio jogo.</p>
         </div>
         <div class="steps">
           <div class="step reveal">
@@ -285,8 +285,8 @@
             <p>Use o editor de mundo, editor de missões, editor de itens e assistentes. Desfaça qualquer coisa, visualize em 3D e teste no modo de jogo.</p>
           </div>
           <div class="step reveal">
-            <h3>Instale com um clique</h3>
-            <p>Feche o jogo e clique em <b>Instalar</b>, depois jogue. Mudou de ideia? <b>Desinstalar</b> deixa o jogo exatamente como estava antes.</p>
+            <h3>Jogue e compartilhe</h3>
+            <p>Inicie o jogo: o runtime compila seus mods ativados atrás de uma tela de carregamento. Desative um mod no gerenciador de mods ou publique-o como um único pacote para outros jogadores.</p>
           </div>
         </div>
       </div>
@@ -298,27 +298,27 @@
         <div class="reveal">
           <span class="eyebrow">Seguro por design</span>
           <h2 class="serif">Seu jogo sempre pode ser <span class="grad-text">restaurado</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">Os mods são pacotes separados, fora da pasta do jogo. O pequeno runtime do CDKit (cdkit.asi) os mostra ao jogo enquanto ele roda – nenhum arquivo original do jogo é alterado. Desinstalar os remove na hora, as atualizações do jogo e a verificação de arquivos da Steam não removem mais seus mods, e vários mods carregam juntos, com cada conflito listado.</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">Os mods ficam separados dos arquivos do próprio jogo. O pequeno runtime do CDKit (cdkit.asi, carregado por um ASI loader) compila seus mods ativados quando o jogo inicia e os mostra ao jogo enquanto ele roda – nenhum arquivo original do jogo é alterado. Um mod desativado no gerenciador de mods some na próxima inicialização, e vários mods carregam juntos na sua própria ordem, com cada conflito listado.</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>Não destrutivo</h4>
-                <p>Os mods são carregados sobre o jogo. Remova-os com um clique.</p>
+                <p>Os mods carregam sobre o jogo. Desative-os no gerenciador de mods e a próxima inicialização usa os arquivos do jogo.</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF190;</span></div>
               <div>
                 <h4>Sobrevive às atualizações do jogo</h4>
-                <p>As alterações são armazenadas como alterações, não como cópias. Recompile após um patch e pronto.</p>
+                <p>As mudanças são salvas como mudanças, não como cópias. O CDKit percebe uma atualização do jogo, e o runtime recompila seus mods na próxima inicialização.</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF151;</span></div>
               <div>
                 <h4>Atualiza automaticamente</h4>
-                <p>Novas versões aparecem com notas de lançamento na página inicial: um clique, download verificado e reinício.</p>
+                <p>Na edição padrão, novas versões chegam com notas de lançamento na página inicial – um clique, download verificado, reinício.</p>
               </div>
             </div>
           </div>
@@ -365,11 +365,11 @@
           </details>
           <details>
             <summary>Pode quebrar meu jogo ou meus saves?</summary>
-            <p>Nenhum arquivo original do jogo é alterado. O CDKit compila seus mods na própria pasta, e o runtime cdkit.asi (carregado por um ASI loader em bin64) os mostra ao jogo enquanto ele roda. Desinstalar remove tudo na hora, e as atualizações do jogo ou a “Verificar integridade dos arquivos” da Steam não removem mais seus mods. O modo de jogo bloqueia o salvamento, então seus saves ficam seguros durante os testes.</p>
+            <p>Nenhum arquivo original do jogo é alterado. O runtime cdkit.asi (carregado por um ASI loader em bin64) compila seus mods ativados quando o jogo inicia, com uma tela de carregamento, e os mostra ao jogo enquanto ele roda. “Desativar este mod” ou “Desativar todos os mods” no gerenciador de mods os desliga, e a próxima inicialização usa os arquivos do próprio jogo. O modo de jogo bloqueia o salvamento, então seus saves ficam seguros durante os testes.</p>
           </details>
           <details>
             <summary>Do que eu preciso?</summary>
-            <p>Windows 10 ou 11 de 64 bits, Crimson Desert na Steam e uma placa de vídeo DirectX 12. O modo de jogo e a prévia ao vivo também usam o plugin World Builder; importar pacotes MetaHuman/Fab exige Unreal Engine.
+            <p>Windows 10 ou 11 de 64 bits, Crimson Desert na Steam, uma placa de vídeo DirectX 12 e o Microsoft Edge WebView2 Runtime (já incluso no Windows 11 e em todo Windows 10 atualizado). Para jogar com mods, o jogo precisa de um ASI loader na pasta bin64, por exemplo o Ultimate ASI Loader (não incluso). O modo de jogo e a prévia ao vivo também usam o plugin World Builder; importar pacotes MetaHuman/Fab exige Unreal Engine.
             </p>
           </details>
           <details>
@@ -378,11 +378,19 @@
           </details>
           <details>
             <summary>O que acontece quando o jogo atualiza?</summary>
-            <p>A Steam redefine a lista de pacotes do jogo, então os mods ficam inativos. Abra seu projeto no CDKit, clique em Build e Install e, na maioria dos casos, suas alterações continuam funcionando.</p>
+            <p>O CDKit percebe a nova versão do jogo e mostra quais projetos ela afeta. O runtime recompila seus mods para o jogo atualizado na próxima inicialização – não há nada a reinstalar, e suas mudanças se mantêm em quase todos os casos.</p>
           </details>
           <details>
             <summary>Posso compartilhar meus mods?</summary>
-            <p>Sim. Compartilhe sua pasta de projeto; outras pessoas abrem no CDKit e clicam em Install, e o CDKit recompila para a versão do jogo delas.</p>
+            <p>Sim. “Publicar mod” grava seu mod como um único pacote .cdpkg e um ZIP para sites de mods. Os outros o adicionam com “Importar mod”, arrastam seus mods para a própria ordem de carregamento, verificam conflitos e podem atualizar um mod ou desfazer uma atualização.</p>
+          </details>
+          <details>
+            <summary>Os jogadores podem usar meus mods sem o CDKit?</summary>
+            <p>Sim. Eles baixam o CDKit Runtime (cdkit.asi e uma pasta mods) nas versões do GitHub, descompactam na pasta do jogo, adicionam um ASI loader e colocam os arquivos .cdpkg em bin64\CDKit\mods.</p>
+          </details>
+          <details>
+            <summary>Onde baixo o CDKit?</summary>
+            <p>Há duas edições com os mesmos editores: a edição padrão, nas versões do GitHub, com atualizações embutidas, e a edição Nexus no Nexus Mods, que não abre nenhuma conexão com a internet por conta própria e é atualizada pela página dela no Nexus.</p>
           </details>
           <details>
             <summary>Onde encontro ajuda?</summary>
@@ -407,6 +415,8 @@
               <span class="fluent-icon" aria-hidden="true">&#xF286;</span>
               Entrar no Discord
             </a>
+            <!-- Nexus edition: placeholder link to the game's Nexus Mods page until the CDKit mod page exists -->
+            <a class="btn btn-lg" href="https://www.nexusmods.com/crimsondesert" target="_blank" rel="noopener">Baixe no Nexus Mods</a>
           </div>
         </div>
       </div>

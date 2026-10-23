@@ -146,7 +146,7 @@
         <div>
           <span class="badge"><b>免费</b><span class="dot"></span><span id="heroBadge">《红色沙漠》模组制作工具包</span></span>
           <h1 class="serif">重塑 <span class="grad-text">Pywel 的世界</span></h1>
-          <p class="lead">在 3D 中编辑开放世界、塑造地形、编写任务、加入你自己的角色——然后一键安装到游戏中，也能同样轻松地移除。</p>
+          <p class="lead">在 3D 中编辑开放世界、塑造地形、编写任务、加入你自己的角色——然后启用模组即可开玩：CDKit 的运行时会在下次启动时把它带入游戏，游戏自身的文件保持不变。</p>
           <div class="hero-ctas">
             <a class="btn btn-lg btn-primary" id="downloadBtn" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">
               <span class="fluent-icon" aria-hidden="true">&#xF151;</span>
@@ -169,7 +169,7 @@
         <div class="stats reveal">
           <div class="stat"><strong class="grad-text">0</strong><span>个原始游戏文件被修改</span></div>
           <div class="stat"><strong class="grad-text" data-count="2100000" data-suffix="+">2.1M+</strong><span>可浏览和替换的游戏文件</span></div>
-          <div class="stat"><strong class="grad-text" data-count="7">7</strong><span>个任务区域：世界、剧情、数据……</span></div>
+          <div class="stat"><strong class="grad-text" data-count="8">8</strong><span>个任务区域：世界、剧情、数据……</span></div>
           <div class="stat"><strong class="grad-text" data-count="11">11</strong><span>种编辑器语言</span></div>
         </div>
       </div>
@@ -195,7 +195,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF00E8;</span></div>
             <h3>地形与植被</h3>
-            <p>抬高、降低或平整地面，用笔刷绘制材质和森林。构建时导航数据与世界地图会同步更新。</p>
+            <p>抬高、降低或平整地面，用笔刷绘制材质和森林。导航数据与世界地图会随你的修改一同更新。</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE178;</span></div>
@@ -237,7 +237,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
             <h3>现代化的编辑器</h3>
-            <p>七个任务区域，每个物品、任务和 NPC 都有自己的标签页，命令面板可以找到一切，崩溃后可恢复——深色或浅色主题任选。</p>
+            <p>八个任务区域（开始、搜索、世界、项目、剧本、数据、角色、资源），每个物品、任务和 NPC 都在独立的标签页中，命令面板可调用一切，并支持崩溃恢复——深色或浅色主题任选。</p>
           </article>
         </div>
       </div>
@@ -273,7 +273,7 @@
         <div class="section-head center reveal">
           <span class="eyebrow">工作原理</span>
           <h2 class="serif">从创意到游戏内 <span class="grad-text">只需三步</span></h2>
-          <p>你的工作内容保存在项目文件夹中。CDKit 会将其构建为额外的数据包，让游戏在自身数据之上加载。</p>
+          <p>你的作品保存在项目文件夹中。CDKit 的运行时（cdkit.asi）会在游戏启动时构建你启用的模组，并将它们叠加在游戏自身的数据之上加载。</p>
         </div>
         <div class="steps">
           <div class="step reveal">
@@ -285,8 +285,8 @@
             <p>使用世界编辑器、任务设计器、物品编辑器和各类助手。任何操作都可撤销，可在 3D 中预览，也可通过游玩模式测试。</p>
           </div>
           <div class="step reveal">
-            <h3>一键安装</h3>
-            <p>关闭游戏，点击 <b>安装</b>，然后开始游戏。改变主意了？ <b>卸载</b> 即可让游戏恢复到原来的状态。</p>
+            <h3>游玩与分享</h3>
+            <p>启动游戏：运行时会在加载画面后构建你启用的模组。在模组管理器中关闭某个模组，或把它发布为一个包供其他玩家使用。</p>
           </div>
         </div>
       </div>
@@ -298,27 +298,27 @@
         <div class="reveal">
           <span class="eyebrow">从设计上保证安全</span>
           <h2 class="serif">你的游戏始终 <span class="grad-text">可以还原</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">模组是位于游戏文件夹之外的独立包。CDKit 的小型运行时（cdkit.asi）在游戏运行时把它们提供给游戏——不会修改任何一个原始游戏文件。卸载即刻移除，游戏更新和 Steam 文件校验不再删除你的模组，多个模组可以同时加载，并列出每一处冲突。</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">模组与游戏自身的文件保持分离。CDKit 的小型运行时（cdkit.asi，由 ASI 加载器加载）在游戏启动时构建你启用的模组，并在游戏运行时把它们提供给游戏——不会修改任何一个原始游戏文件。在模组管理器中关闭的模组会在下次启动时消失，多个模组可以按你自己的顺序同时加载，并列出每一处冲突。</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>非破坏式</h4>
-                <p>模组覆盖加载在游戏之上，一键即可移除。</p>
+                <p>模组叠加在游戏之上加载。在模组管理器中关闭它们，下次启动时就会使用游戏自身的文件。</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF190;</span></div>
               <div>
                 <h4>可适应游戏更新</h4>
-                <p>修改以“变更”而非文件副本的形式保存——游戏更新后重新构建即可。</p>
+                <p>修改以修改本身的形式保存，而不是副本。CDKit 会察觉游戏更新，运行时会在下次启动时重新构建你的模组。</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF151;</span></div>
               <div>
                 <h4>自动更新</h4>
-                <p>新版本会连同更新说明显示在启动页——一键完成校验下载并重启。</p>
+                <p>在标准版中，新版本会连同更新说明出现在开始页面上——一键操作，下载经过校验，重启即可。</p>
               </div>
             </div>
           </div>
@@ -365,11 +365,11 @@
           </details>
           <details>
             <summary>它会损坏游戏或存档吗？</summary>
-            <p>不会修改任何原始游戏文件。CDKit 将你的模组构建到它自己的文件夹中，其运行时 cdkit.asi（由 bin64 中的 ASI 加载器加载）在游戏运行时把它们提供给游戏。卸载即刻移除一切，游戏更新或 Steam 的“验证游戏文件的完整性”不再删除你的模组。游玩模式会阻止存档，测试期间你的存档保持安全。</p>
+            <p>不会修改任何原始游戏文件。运行时 cdkit.asi（由 bin64 中的 ASI 加载器加载）会在游戏启动时构建你启用的模组并显示加载画面，然后在游戏运行时把它们提供给游戏。在模组管理器中选择“禁用此模组”或“禁用所有模组”即可关闭它们，下次启动时就会使用游戏自身的文件。游玩模式会阻止存档，测试期间你的存档保持安全。</p>
           </details>
           <details>
             <summary>我需要什么？</summary>
-            <p>Windows 10 或 11（64 位）、Steam 版《红色沙漠》以及支持 DirectX 12 的显卡。游玩模式和实时预览还会使用 World Builder 插件；导入 MetaHuman/Fab 包需要 Unreal Engine。
+            <p>Windows 10 或 11（64 位）、Steam 版《红色沙漠》、支持 DirectX 12 的显卡，以及 Microsoft Edge WebView2 Runtime（Windows 11 和所有保持更新的 Windows 10 均已自带）。要游玩模组，游戏的 bin64 文件夹中需要一个 ASI 加载器，例如 Ultimate ASI Loader（不随附）。游玩模式和实时预览还会使用 World Builder 插件；导入 MetaHuman/Fab 包需要 Unreal Engine。
             </p>
           </details>
           <details>
@@ -378,11 +378,19 @@
           </details>
           <details>
             <summary>游戏更新后会怎样？</summary>
-            <p>Steam 会重置游戏的数据包列表，因此模组会暂时失效。在 CDKit 中打开项目，点击 Build 和 Install——绝大多数情况下你的修改都可以继续使用。</p>
+            <p>CDKit 会察觉新的游戏版本，并显示受影响的项目。运行时会在下次启动时针对更新后的游戏重新构建你的模组——无需重新安装，你的修改几乎在所有情况下都能保留。</p>
           </details>
           <details>
             <summary>我可以分享自己的模组吗？</summary>
-            <p>可以。分享你的项目文件夹；其他人在 CDKit 中打开并点击 Install，CDKit 会针对他们的游戏版本重新构建。</p>
+            <p>可以。“发布模组”会把你的模组写成一个 .cdpkg 包，并附带一个用于模组网站的 ZIP。其他人用“导入模组”添加它，拖动模组排出自己的加载顺序，检查冲突，还可以更新模组或撤销更新。</p>
+          </details>
+          <details>
+            <summary>玩家没有 CDKit 也能使用我的模组吗？</summary>
+            <p>可以。他们从 GitHub 发布页下载 CDKit Runtime（cdkit.asi 和一个 mods 文件夹），解压到游戏文件夹，加上一个 ASI 加载器，再把 .cdpkg 文件放进 bin64\CDKit\mods。</p>
+          </details>
+          <details>
+            <summary>在哪里下载 CDKit？</summary>
+            <p>共有两个版本，编辑器完全相同：标准版来自 GitHub 发布页，内置自动更新；Nexus 版发布在 Nexus Mods 上，它自身不建立任何网络连接，通过其 Nexus 页面更新。</p>
           </details>
           <details>
             <summary>在哪里获得帮助？</summary>
@@ -407,6 +415,8 @@
               <span class="fluent-icon" aria-hidden="true">&#xF286;</span>
               加入 Discord
             </a>
+            <!-- Nexus edition: placeholder link to the game's Nexus Mods page until the CDKit mod page exists -->
+            <a class="btn btn-lg" href="https://www.nexusmods.com/crimsondesert" target="_blank" rel="noopener">在 Nexus Mods 获取</a>
           </div>
         </div>
       </div>

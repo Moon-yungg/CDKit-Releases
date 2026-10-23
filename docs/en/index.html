@@ -146,7 +146,7 @@
         <div>
           <span class="badge"><b>FREE</b><span class="dot"></span><span id="heroBadge">The modding toolkit for Crimson Desert</span></span>
           <h1 class="serif">Reshape the <span class="grad-text">world of Pywel</span></h1>
-          <p class="lead">Edit the open world in 3D, sculpt terrain, write quests, bring in your own characters – then install everything into the game with a single click, and remove it just as easily.</p>
+          <p class="lead">Edit the open world in 3D, sculpt terrain, write quests, bring in your own characters – then switch your mod on and play: CDKit's runtime brings it into the game at the next start, and the game's own files stay unchanged.</p>
           <div class="hero-ctas">
             <a class="btn btn-lg btn-primary" id="downloadBtn" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">
               <span class="fluent-icon" aria-hidden="true">&#xF151;</span>
@@ -169,7 +169,7 @@
         <div class="stats reveal">
           <div class="stat"><strong class="grad-text">0</strong><span>original game files touched</span></div>
           <div class="stat"><strong class="grad-text" data-count="2100000" data-suffix="+">2.1M+</strong><span>game files to browse and replace</span></div>
-          <div class="stat"><strong class="grad-text" data-count="7">7</strong><span>task areas: world, story, data …</span></div>
+          <div class="stat"><strong class="grad-text" data-count="8">8</strong><span>task areas: world, story, data …</span></div>
           <div class="stat"><strong class="grad-text" data-count="11">11</strong><span>editor languages</span></div>
         </div>
       </div>
@@ -195,7 +195,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF00E8;</span></div>
             <h3>Terrain &amp; vegetation</h3>
-            <p>Raise, lower and flatten the ground, paint materials and forests with brushes. Navigation and world map update on build.</p>
+            <p>Raise, lower and flatten the ground, paint materials and forests with brushes. Navigation and the world map follow your changes.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE178;</span></div>
@@ -237,7 +237,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
             <h3>A modern editor</h3>
-            <p>Seven task areas, every item, quest and NPC in its own tab, a command palette for everything and crash recovery – in a dark or light theme.</p>
+            <p>Eight task areas (Start, Search, World, Project, Story, Data, Characters, Assets), every item, quest and NPC in its own tab, a command palette for everything and crash recovery – in a dark or light theme.</p>
           </article>
         </div>
       </div>
@@ -273,7 +273,7 @@
         <div class="section-head center reveal">
           <span class="eyebrow">How it works</span>
           <h2 class="serif">From idea to in-game <span class="grad-text">in three steps</span></h2>
-          <p>Your work lives in a project folder. CDKit turns it into an extra package the game loads on top of its own data.</p>
+          <p>Your work lives in a project folder. CDKit's runtime (cdkit.asi) builds your enabled mods when the game starts and loads them on top of the game's own data.</p>
         </div>
         <div class="steps">
           <div class="step reveal">
@@ -285,8 +285,8 @@
             <p>Use the world editor, quest designer, item editor and assistants. Undo anything, preview it in 3D, test it with play mode.</p>
           </div>
           <div class="step reveal">
-            <h3>Install with one click</h3>
-            <p>Close the game, click <b>Install</b>, play. Changed your mind? <b>Uninstall</b> puts the game back exactly as it was.</p>
+            <h3>Play and share</h3>
+            <p>Start the game: the runtime builds your enabled mods behind a loading screen. Switch a mod off in the mod manager, or publish it as one package for other players.</p>
           </div>
         </div>
       </div>
@@ -298,27 +298,27 @@
         <div class="reveal">
           <span class="eyebrow">Safe by design</span>
           <h2 class="serif">Your game stays <span class="grad-text">restorable</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">Mods are separate packages outside the game folder. CDKit's small runtime (cdkit.asi) shows them to the game while it runs – not a single original game file is changed. Uninstall takes them out at once, game updates and Steam's file check no longer remove your mods, and several mods load together with every conflict listed.</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">Mods stay separate from the game's own files. CDKit's small runtime (cdkit.asi, loaded by an ASI loader) builds your enabled mods when the game starts and shows them to the game while it runs – not a single original game file is changed. A mod switched off in the mod manager is gone at the next start, and several mods load together in your own order with every conflict listed.</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>Non-destructive</h4>
-                <p>Mods load on top of the game. Remove them with one click.</p>
+                <p>Mods load on top of the game. Switch them off in the mod manager and the next start uses the game's files.</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF190;</span></div>
               <div>
                 <h4>Survives game updates</h4>
-                <p>Changes are stored as changes, not as copies – rebuild after a patch and you're done.</p>
+                <p>Changes are stored as changes, not as copies. CDKit notices a game update, and the runtime rebuilds your mods at the next start.</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF151;</span></div>
               <div>
                 <h4>Updates itself</h4>
-                <p>New versions arrive with release notes on the start page – one click, verified download, restart.</p>
+                <p>In the standard edition, new versions arrive with release notes on the start page – one click, verified download, restart.</p>
               </div>
             </div>
           </div>
@@ -365,11 +365,11 @@
           </details>
           <details>
             <summary>Will it break my game or my save games?</summary>
-            <p>No original game file is changed. CDKit builds your mods into its own folder, and its runtime cdkit.asi (loaded by an ASI loader in bin64) shows them to the game while it runs. Uninstall takes everything out at once, and game updates or Steam's “Verify integrity of game files” no longer remove your mods. Play mode blocks saving, so your saves stay safe while testing.</p>
+            <p>No original game file is changed. The runtime cdkit.asi (loaded by an ASI loader in bin64) builds your enabled mods at game start, with a loading screen, and shows them to the game while it runs. “Disable this mod” or “Disable all mods” in the mod manager switches them off, and the next start uses the game's own files. Play mode blocks saving, so your saves stay safe while testing.</p>
           </details>
           <details>
             <summary>What do I need?</summary>
-            <p>Windows 10 or 11 (64-bit), Crimson Desert on Steam and a DirectX 12 graphics card. Play mode and live preview additionally use the World Builder plugin; importing MetaHuman/Fab packages needs Unreal Engine.
+            <p>Windows 10 or 11 (64-bit), Crimson Desert on Steam, a DirectX 12 graphics card and the Microsoft Edge WebView2 Runtime (part of Windows 11 and every up-to-date Windows 10). To play mods, the game needs an ASI loader in its bin64 folder, for example Ultimate ASI Loader (not included). Play mode and live preview additionally use the World Builder plugin; importing MetaHuman/Fab packages needs Unreal Engine.
             </p>
           </details>
           <details>
@@ -378,11 +378,19 @@
           </details>
           <details>
             <summary>What happens when the game gets an update?</summary>
-            <p>Steam resets the game's package list, so mods become inactive. Open your project in CDKit, click Build and Install – your changes carry over in almost all cases.</p>
+            <p>CDKit notices the new game version and shows which projects it affects. The runtime rebuilds your mods against the updated game at the next start – there is nothing to reinstall, and your changes carry over in almost all cases.</p>
           </details>
           <details>
             <summary>Can I share my mods?</summary>
-            <p>Yes. Share your project folder; others open it in CDKit and click Install, and CDKit rebuilds it for their game version.</p>
+            <p>Yes. “Publish mod” writes your mod as one .cdpkg package plus a ZIP for mod sites. Others add it with “Import mod”, drag their mods into their own load order, check conflicts, and can update a mod or undo an update.</p>
+          </details>
+          <details>
+            <summary>Can players use my mods without CDKit?</summary>
+            <p>Yes. They download CDKit Runtime (cdkit.asi and a mods folder) from the GitHub releases, unzip it into the game folder, add an ASI loader and put the .cdpkg files into bin64\CDKit\mods.</p>
+          </details>
+          <details>
+            <summary>Where do I download CDKit?</summary>
+            <p>There are two editions with the same editors: the standard edition from the GitHub releases, with built-in updates, and the Nexus edition on Nexus Mods, which opens no internet connection of its own and is updated through its Nexus page.</p>
           </details>
           <details>
             <summary>Where do I get help?</summary>
@@ -407,6 +415,8 @@
               <span class="fluent-icon" aria-hidden="true">&#xF286;</span>
               Join the Discord
             </a>
+            <!-- Nexus edition: placeholder link to the game's Nexus Mods page until the CDKit mod page exists -->
+            <a class="btn btn-lg" href="https://www.nexusmods.com/crimsondesert" target="_blank" rel="noopener">Get it on Nexus Mods</a>
           </div>
         </div>
       </div>

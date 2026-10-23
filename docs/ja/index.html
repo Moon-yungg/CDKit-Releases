@@ -146,7 +146,7 @@
         <div>
           <span class="badge"><b>無料</b><span class="dot"></span><span id="heroBadge">Crimson Desert のMOD制作ツールキット</span></span>
           <h1 class="serif">作り変える <span class="grad-text">Pywel の世界</span></h1>
-          <p class="lead">オープンワールドを 3D で編集し、地形を造形し、クエストを書き、独自のキャラクターを追加 – すべてをワンクリックでゲームにインストールし、同じように簡単に取り外せます。</p>
+          <p class="lead">オープンワールドを 3D で編集し、地形を造形し、クエストを書き、独自のキャラクターを追加 – あとは Mod を有効にしてプレイするだけ。CDKit のランタイムが次回の起動時にゲームへ取り込み、ゲーム本体のファイルは変更されません。</p>
           <div class="hero-ctas">
             <a class="btn btn-lg btn-primary" id="downloadBtn" href="https://github.com/Moon-yungg/CDKit-Releases/releases/latest">
               <span class="fluent-icon" aria-hidden="true">&#xF151;</span>
@@ -169,7 +169,7 @@
         <div class="stats reveal">
           <div class="stat"><strong class="grad-text">0</strong><span>変更される元ゲームファイル</span></div>
           <div class="stat"><strong class="grad-text" data-count="2100000" data-suffix="+">2.1M+</strong><span>閲覧・置換できるゲームファイル</span></div>
-          <div class="stat"><strong class="grad-text" data-count="7">7</strong><span>つの作業エリア：ワールド、ストーリー、データ…</span></div>
+          <div class="stat"><strong class="grad-text" data-count="8">8</strong><span>つの作業エリア：ワールド、ストーリー、データ…</span></div>
           <div class="stat"><strong class="grad-text" data-count="11">11</strong><span>エディター対応言語</span></div>
         </div>
       </div>
@@ -195,7 +195,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF00E8;</span></div>
             <h3>地形と植生</h3>
-            <p>地面を持ち上げたり下げたり平坦化し、ブラシでマテリアルや森林を描画できます。ビルド時にナビゲーションとワールドマップも更新されます。</p>
+            <p>ブラシで地面を盛り上げ、掘り下げ、平らにし、マテリアルや森を描けます。ナビゲーションとワールドマップも変更に追従します。</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE178;</span></div>
@@ -237,7 +237,7 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
             <h3>モダンなエディター</h3>
-            <p>7 つの作業エリア、アイテム・クエスト・NPC はそれぞれ専用タブ、何でも呼び出せるコマンドパレット、クラッシュからの復元 – ダーク／ライトテーマ対応。</p>
+            <p>8 つの作業エリア（開始、検索、ワールド、プロジェクト、ストーリー、データ、キャラクター、アセット）、アイテム・クエスト・NPC ごとのタブ、すべてを呼び出せるコマンドパレット、クラッシュからの復旧 – ダークテーマとライトテーマで。</p>
           </article>
         </div>
       </div>
@@ -273,7 +273,7 @@
         <div class="section-head center reveal">
           <span class="eyebrow">仕組み</span>
           <h2 class="serif">アイデアからゲーム内へ <span class="grad-text">3ステップで</span></h2>
-          <p>作業内容はプロジェクトフォルダーに保存されます。CDKit がそれを、ゲーム自身のデータに追加して読み込むパッケージへ変換します。</p>
+          <p>作業内容はプロジェクトフォルダーに保存されます。CDKit のランタイム（cdkit.asi）がゲームの起動時に有効な Mod をビルドし、ゲーム本体のデータの上に読み込みます。</p>
         </div>
         <div class="steps">
           <div class="step reveal">
@@ -285,8 +285,8 @@
             <p>ワールドエディター、クエストデザイナー、アイテムエディター、各種アシスタントを使います。何でもUndoでき、3Dでプレビューし、プレイモードでテストできます。</p>
           </div>
           <div class="step reveal">
-            <h3>ワンクリックで導入</h3>
-            <p>ゲームを閉じて <b>インストール</b>をクリックし、そのままプレイ。元に戻したくなったら？ <b>アンインストール</b> でゲームを元の状態へ完全に戻せます。</p>
+            <h3>遊んで共有</h3>
+            <p>ゲームを起動すると、ランタイムがロード画面の裏で有効な Mod をビルドします。Mod マネージャーで Mod をオフにしたり、ほかのプレイヤー向けに 1 つのパッケージとして公開したりできます。</p>
           </div>
         </div>
       </div>
@@ -298,27 +298,27 @@
         <div class="reveal">
           <span class="eyebrow">安全性を前提に設計</span>
           <h2 class="serif">ゲーム本体は <span class="grad-text">いつでも元に戻せます</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">Mod はゲーム フォルダーの外にある別パッケージです。CDKit の小さなランタイム (cdkit.asi) が実行中のゲームにそれらを見せるので、ゲームの元ファイルは 1 つも変更されません。アンインストールすればすぐに外れ、ゲームのアップデートや Steam のファイル チェックで Mod が消えることもなくなり、複数の Mod をすべての競合を一覧しながら同時に読み込めます。</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">Mod はゲーム本体のファイルとは分かれたままです。CDKit の小さなランタイム（cdkit.asi、ASI ローダーが読み込み）がゲームの起動時に有効な Mod をビルドし、実行中のゲームにそれらを見せるので、ゲームの元ファイルは 1 つも変更されません。Mod マネージャーでオフにした Mod は次回の起動時に外れ、複数の Mod を自分で決めた順序で、すべての競合を一覧しながら同時に読み込めます。</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>非破壊</h4>
-                <p>MODはゲームに追加して読み込まれます。ワンクリックで削除できます。</p>
+                <p>Mod はゲームの上に読み込まれます。Mod マネージャーでオフにすれば、次回の起動ではゲームのファイルが使われます。</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF190;</span></div>
               <div>
                 <h4>ゲーム更新にも対応</h4>
-                <p>変更内容はコピーではなく差分として保存されます。パッチ後に再ビルドするだけで完了です。</p>
+                <p>変更はコピーではなく変更として保存されます。CDKit がゲームのアップデートを検知し、ランタイムが次回の起動時に Mod をビルドし直します。</p>
               </div>
             </div>
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF151;</span></div>
               <div>
                 <h4>自動更新</h4>
-                <p>新しいバージョンはリリースノート付きでスタートページに表示されます。ワンクリックで検証済みダウンロードと再起動ができます。</p>
+                <p>スタンダード版では、新しいバージョンがリリースノート付きでスタートページに届きます – ワンクリック、検証済みのダウンロード、再起動。</p>
               </div>
             </div>
           </div>
@@ -365,11 +365,11 @@
           </details>
           <details>
             <summary>ゲームやセーブデータが壊れることはありますか？</summary>
-            <p>ゲームの元ファイルは 1 つも変更されません。CDKit は Mod を専用フォルダーにビルドし、ランタイム cdkit.asi (bin64 の ASI ローダーが読み込み) が実行中のゲームにそれらを見せます。アンインストールすればすべてすぐに外れ、ゲームのアップデートや Steam の「ゲームファイルの整合性を確認」で Mod が消えることもなくなりました。プレイ モードはセーブをブロックするので、テスト中もセーブデータは安全です。</p>
+            <p>ゲームの元ファイルは 1 つも変更されません。ランタイム cdkit.asi（bin64 の ASI ローダーが読み込み）がゲームの起動時にロード画面を表示しながら有効な Mod をビルドし、実行中のゲームにそれらを見せます。Mod マネージャーの「この Mod を無効化」または「すべての mod を無効化」でオフになり、次回の起動ではゲーム本体のファイルが使われます。プレイ モードはセーブをブロックするので、テスト中もセーブデータは安全です。</p>
           </details>
           <details>
             <summary>必要なものは？</summary>
-            <p>Windows 10 または 11（64-bit）、Steam版 Crimson Desert、DirectX 12対応GPUが必要です。プレイモードとライブプレビューでは World Builder プラグインも使用し、MetaHuman/Fab パッケージの読み込みには Unreal Engine が必要です。
+            <p>Windows 10 または 11（64-bit）、Steam版 Crimson Desert、DirectX 12対応GPU、Microsoft Edge WebView2 Runtime（Windows 11 と最新の Windows 10 には標準搭載）が必要です。Mod で遊ぶには、ゲームの bin64 フォルダーに ASI ローダー（例：Ultimate ASI Loader、同梱されていません）が必要です。プレイモードとライブプレビューでは World Builder プラグインも使用し、MetaHuman/Fab パッケージの読み込みには Unreal Engine が必要です。
             </p>
           </details>
           <details>
@@ -378,11 +378,19 @@
           </details>
           <details>
             <summary>ゲームがアップデートされたらどうなりますか？</summary>
-            <p>Steam がゲームのパッケージ一覧をリセットするため、MODはいったん無効になります。CDKit でプロジェクトを開き、Build と Install をクリックすれば、ほとんどの場合そのまま変更を引き継げます。</p>
+            <p>CDKit が新しいゲームバージョンを検知し、影響を受けるプロジェクトを表示します。ランタイムが次回の起動時に更新後のゲームに合わせて Mod をビルドし直すので、入れ直す必要はなく、変更内容はほとんどの場合そのまま引き継がれます。</p>
           </details>
           <details>
             <summary>MODを共有できますか？</summary>
-            <p>はい。プロジェクトフォルダーを共有し、相手が CDKit で開いて Install をクリックすると、そのゲームバージョン向けに CDKit が再ビルドします。</p>
+            <p>はい。「Mod を公開」で Mod を 1 つの .cdpkg パッケージと Mod サイト向けの ZIP として書き出せます。ほかの人は「Mod をインポート」で追加し、ドラッグして自分のロード順を決め、競合を確認し、Mod の更新や更新の取り消しもできます。</p>
+          </details>
+          <details>
+            <summary>CDKit がなくてもプレイヤーは私の Mod を使えますか？</summary>
+            <p>はい。GitHub のリリースから CDKit Runtime（cdkit.asi と mods フォルダー）をダウンロードしてゲームフォルダーに展開し、ASI ローダーを追加して、.cdpkg ファイルを bin64\CDKit\mods に入れるだけです。</p>
+          </details>
+          <details>
+            <summary>CDKit はどこでダウンロードできますか？</summary>
+            <p>エディターが同じ 2 つのエディションがあります。GitHub のリリースにあるスタンダード版は更新機能を内蔵し、Nexus Mods にある Nexus 版は自らインターネットに接続せず、Nexus のページから更新します。</p>
           </details>
           <details>
             <summary>ヘルプはどこで受けられますか？</summary>
@@ -407,6 +415,8 @@
               <span class="fluent-icon" aria-hidden="true">&#xF286;</span>
               Discord に参加
             </a>
+            <!-- Nexus edition: placeholder link to the game's Nexus Mods page until the CDKit mod page exists -->
+            <a class="btn btn-lg" href="https://www.nexusmods.com/crimsondesert" target="_blank" rel="noopener">Nexus Mods で入手</a>
           </div>
         </div>
       </div>
