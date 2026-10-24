@@ -195,7 +195,7 @@ const REPO = 'Moon-yungg/CDKit-Releases';
       fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } })
         .then(r => r.ok ? r.json() : Promise.reject(r.status))
         .then(rel => {
-          const zip = (rel.assets || []).find(a => /\.zip$/i.test(a.name));
+          const zip = (rel.assets || []).find(a => a.name === 'CDKit.zip');
           if (zip) document.getElementById('downloadBtn').href = zip.browser_download_url;
           latestRelease = { rel, zip };
           renderLatestRelease();
