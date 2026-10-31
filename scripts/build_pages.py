@@ -45,6 +45,8 @@ SVG_GLYPHS = [
     "translate_20_regular",
     "table_20_regular",
     "chat_20_regular",
+    "window_apps_20_regular",
+    "paint_brush_20_regular",
     "map_20_regular",
     "shield_checkmark_20_regular",
     "arrow_sync_20_regular",

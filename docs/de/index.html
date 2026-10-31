@@ -226,13 +226,23 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF75D;</span></div>
             <h3>Alle Daten</h3>
-            <p>Alle Datentabellen des Spiels mit Suche, Massenbearbeitung und CSV-Austausch mit Excel oder Google Sheets.
+            <p>Alle Datentabellen des Spiels, die des DLC eingeschlossen, mit Suche, Massenbearbeitung und CSV-Austausch mit Excel oder Google Sheets.
             </p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF286;</span></div>
             <h3>Briefe &amp; Lore</h3>
             <p>Schreibe Briefe und Schriftrollen, die Spieler aufnehmen und lesen können, und platziere sie überall in der Welt.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEE65;</span></div>
+            <h3>UI-Mods</h3>
+            <p>Ändere Menüs, Panels und Tastenhinweise des Spiels. CDKit kompiliert jedes geänderte Panel ins UI-Format des Spiels, wenn deine Mods gebaut werden.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF592;</span></div>
+            <h3>Texturwerkzeuge</h3>
+            <p>Texturen in Massen zuordnen, Umfärbe-Varianten erstellen, Ebenen kombinieren, DDS und PNG umwandeln und Item-Icons erstellen.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
@@ -298,13 +308,13 @@
         <div class="reveal">
           <span class="eyebrow">Sicherheit als Prinzip</span>
           <h2 class="serif">Dein Spiel bleibt <span class="grad-text">wiederherstellbar</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">Mods bleiben von den Dateien des Spiels getrennt. Die kleine CDKit-Laufzeit (cdkit.asi, geladen von einem ASI-Loader) baut deine aktivierten Mods beim Spielstart und zeigt sie dem Spiel, während es läuft – keine einzige Originaldatei des Spiels wird verändert. Eine im Mod-Manager ausgeschaltete Mod ist beim nächsten Start weg, und mehrere Mods laden zusammen in deiner eigenen Reihenfolge, mit jedem Konflikt aufgelistet.</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">Mods bleiben von den Dateien des Spiels getrennt. Die kleine CDKit-Laufzeit (cdkit.asi, geladen von einem ASI-Loader) baut deine aktivierten Mods beim Spielstart und fügt sie dem Spiel nur im Arbeitsspeicher hinzu, während es läuft – keine einzige Originaldatei des Spiels wird verändert. Eine im Mod-Manager ausgeschaltete Mod ist beim nächsten Start weg, und mehrere Mods laden zusammen in deiner eigenen Reihenfolge, mit jedem Konflikt aufgelistet.</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>Nicht-destruktiv</h4>
-                <p>Mods laden über dem Spiel. Schalte sie im Mod-Manager aus, und der nächste Start verwendet die Dateien des Spiels.</p>
+                <p>Mods laden über dem Spiel, nur im Arbeitsspeicher. Schalte sie im Mod-Manager aus, und der nächste Start verwendet die Dateien des Spiels.</p>
               </div>
             </div>
             <div class="pill">
@@ -365,7 +375,7 @@
           </details>
           <details>
             <summary>Kann es mein Spiel oder meine Spielstände beschädigen?</summary>
-            <p>Keine Originaldatei des Spiels wird verändert. Die Laufzeit cdkit.asi (geladen von einem ASI-Loader in bin64) baut deine aktivierten Mods beim Spielstart mit einem Ladebildschirm und zeigt sie dem Spiel, während es läuft. „Diese Mod deaktivieren“ oder „Alle Mods deaktivieren“ im Mod-Manager schaltet sie aus, und der nächste Start verwendet die Dateien des Spiels. Der Spielmodus blockiert das Speichern, damit deine Spielstände beim Testen sicher bleiben.</p>
+            <p>Keine Originaldatei des Spiels wird verändert. Die Laufzeit cdkit.asi (geladen von einem ASI-Loader in bin64) baut deine aktivierten Mods beim Spielstart mit einem Ladebildschirm und fügt sie dem Spiel nur im Arbeitsspeicher hinzu, während es läuft. „Diese Mod deaktivieren“ oder „Alle Mods deaktivieren“ im Mod-Manager schaltet sie aus, und der nächste Start verwendet die Dateien des Spiels. Der Spielmodus blockiert das Speichern, damit deine Spielstände beim Testen sicher bleiben.</p>
           </details>
           <details>
             <summary>Was brauche ich?</summary>
@@ -378,7 +388,7 @@
           </details>
           <details>
             <summary>Was passiert bei einem Spielupdate?</summary>
-            <p>CDKit bemerkt die neue Spielversion und zeigt, welche Projekte sie betrifft. Die Laufzeit baut deine Mods beim nächsten Start gegen das aktualisierte Spiel neu – nichts muss neu installiert werden, und deine Änderungen bleiben in fast allen Fällen erhalten.</p>
+            <p>CDKit bemerkt die neue Spielversion und zeigt, welche Projekte sie betrifft. Die Laufzeit baut deine Mods beim nächsten Start gegen das aktualisierte Spiel neu – nichts muss neu installiert werden, und deine Änderungen bleiben in fast allen Fällen erhalten. Ein größeres Update kann zuerst eine neue CDKit-Version brauchen; die Versionshinweise nennen die unterstützten Spielversionen.</p>
           </details>
           <details>
             <summary>Kann ich meine Mods teilen?</summary>
@@ -387,6 +397,10 @@
           <details>
             <summary>Können Spieler meine Mods ohne CDKit nutzen?</summary>
             <p>Ja. Sie laden CDKit Runtime (cdkit.asi und einen mods-Ordner) aus den GitHub-Releases herunter, entpacken es in den Spielordner, fügen einen ASI-Loader hinzu und legen die .cdpkg-Dateien in bin64\CDKit\mods.</p>
+          </details>
+          <details>
+            <summary>Kann ich CDKit neben anderen Mods verwenden?</summary>
+            <p>Ja, die meisten ASI-Mods laufen problemlos daneben. Betreibe aber nicht zwei Mod-Loader gleichzeitig, die selbst Dateien laden: Sie hängen sich in dieselben Spielfunktionen und können das Spiel abstürzen lassen. Behalte nur einen davon in bin64.</p>
           </details>
           <details>
             <summary>Wo lade ich CDKit herunter?</summary>

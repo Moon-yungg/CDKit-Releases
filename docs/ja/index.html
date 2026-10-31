@@ -226,13 +226,23 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF75D;</span></div>
             <h3>すべてのデータ</h3>
-            <p>ゲーム内の全データテーブルにアクセスし、検索、一括編集、CSV経由での Excel / Google Sheets との往復編集ができます。
+            <p>DLC のテーブルを含むゲーム内の全データテーブルにアクセスし、検索、一括編集、CSV経由での Excel / Google Sheets との往復編集ができます。
             </p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF286;</span></div>
             <h3>手紙とロア</h3>
             <p>プレイヤーが拾って読める手紙や巻物を書き、ワールド内の好きな場所へ配置できます。</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEE65;</span></div>
+            <h3>UI Mod</h3>
+            <p>ゲームのメニュー、パネル、キーガイドを変更できます。Mod のビルド時に、CDKit が変更したパネルをすべてゲーム独自の UI 形式にコンパイルします。</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF592;</span></div>
+            <h3>テクスチャツール</h3>
+            <p>テクスチャの一括マッチング、色違いバリエーションの作成、レイヤーの合成、DDS と PNG の変換、アイテムアイコンの作成ができます。</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
@@ -298,13 +308,13 @@
         <div class="reveal">
           <span class="eyebrow">安全性を前提に設計</span>
           <h2 class="serif">ゲーム本体は <span class="grad-text">いつでも元に戻せます</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">Mod はゲーム本体のファイルとは分かれたままです。CDKit の小さなランタイム（cdkit.asi、ASI ローダーが読み込み）がゲームの起動時に有効な Mod をビルドし、実行中のゲームにそれらを見せるので、ゲームの元ファイルは 1 つも変更されません。Mod マネージャーでオフにした Mod は次回の起動時に外れ、複数の Mod を自分で決めた順序で、すべての競合を一覧しながら同時に読み込めます。</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">Mod はゲーム本体のファイルとは分かれたままです。CDKit の小さなランタイム（cdkit.asi、ASI ローダーが読み込み）がゲームの起動時に有効な Mod をビルドし、実行中のゲームのメモリ上だけにそれらを追加するので、ゲームの元ファイルは 1 つも変更されません。Mod マネージャーでオフにした Mod は次回の起動時に外れ、複数の Mod を自分で決めた順序で、すべての競合を一覧しながら同時に読み込めます。</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>非破壊</h4>
-                <p>Mod はゲームの上に読み込まれます。Mod マネージャーでオフにすれば、次回の起動ではゲームのファイルが使われます。</p>
+                <p>Mod はメモリ上だけでゲームの上に読み込まれます。Mod マネージャーでオフにすれば、次回の起動ではゲームのファイルが使われます。</p>
               </div>
             </div>
             <div class="pill">
@@ -365,7 +375,7 @@
           </details>
           <details>
             <summary>ゲームやセーブデータが壊れることはありますか？</summary>
-            <p>ゲームの元ファイルは 1 つも変更されません。ランタイム cdkit.asi（bin64 の ASI ローダーが読み込み）がゲームの起動時にロード画面を表示しながら有効な Mod をビルドし、実行中のゲームにそれらを見せます。Mod マネージャーの「この Mod を無効化」または「すべての mod を無効化」でオフになり、次回の起動ではゲーム本体のファイルが使われます。プレイ モードはセーブをブロックするので、テスト中もセーブデータは安全です。</p>
+            <p>ゲームの元ファイルは 1 つも変更されません。ランタイム cdkit.asi（bin64 の ASI ローダーが読み込み）がゲームの起動時にロード画面を表示しながら有効な Mod をビルドし、実行中のゲームのメモリ上だけにそれらを追加します。Mod マネージャーの「この Mod を無効化」または「すべての mod を無効化」でオフになり、次回の起動ではゲーム本体のファイルが使われます。プレイ モードはセーブをブロックするので、テスト中もセーブデータは安全です。</p>
           </details>
           <details>
             <summary>必要なものは？</summary>
@@ -378,7 +388,7 @@
           </details>
           <details>
             <summary>ゲームがアップデートされたらどうなりますか？</summary>
-            <p>CDKit が新しいゲームバージョンを検知し、影響を受けるプロジェクトを表示します。ランタイムが次回の起動時に更新後のゲームに合わせて Mod をビルドし直すので、入れ直す必要はなく、変更内容はほとんどの場合そのまま引き継がれます。</p>
+            <p>CDKit が新しいゲームバージョンを検知し、影響を受けるプロジェクトを表示します。ランタイムが次回の起動時に更新後のゲームに合わせて Mod をビルドし直すので、入れ直す必要はなく、変更内容はほとんどの場合そのまま引き継がれます。大きなアップデートの後は、先に新しい CDKit のリリースが必要になることがあります。対応するゲームのバージョンはリリースノートに記載されます。</p>
           </details>
           <details>
             <summary>MODを共有できますか？</summary>
@@ -387,6 +397,10 @@
           <details>
             <summary>CDKit がなくてもプレイヤーは私の Mod を使えますか？</summary>
             <p>はい。GitHub のリリースから CDKit Runtime（cdkit.asi と mods フォルダー）をダウンロードしてゲームフォルダーに展開し、ASI ローダーを追加して、.cdpkg ファイルを bin64\CDKit\mods に入れるだけです。</p>
+          </details>
+          <details>
+            <summary>ほかの Mod と一緒に CDKit を使えますか？</summary>
+            <p>はい、ほとんどの ASI Mod は問題なく併用できます。ただし、独自にファイルを読み込む Mod ローダーを 2 つ同時に動かさないでください。同じゲーム関数をフックするため、ゲームがクラッシュすることがあります。bin64 にはどちらか 1 つだけを置いてください。</p>
           </details>
           <details>
             <summary>CDKit はどこでダウンロードできますか？</summary>

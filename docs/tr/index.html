@@ -226,13 +226,23 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF75D;</span></div>
             <h3>Tüm veriler</h3>
-            <p>Oyunun tüm veri tablolarına erişin; arama, toplu düzenleme ve Excel veya Google Sheets ile CSV alışverişi yapın.
+            <p>DLC tabloları dahil oyunun tüm veri tablolarına erişin; arama, toplu düzenleme ve Excel veya Google Sheets ile CSV alışverişi yapın.
             </p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF286;</span></div>
             <h3>Mektuplar ve hikâye</h3>
             <p>Oyuncuların alıp okuyabileceği mektup ve parşömenler yazın, bunları dünyanın istediğiniz yerine yerleştirin.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEE65;</span></div>
+            <h3>Arayüz modları</h3>
+            <p>Oyunun menülerini, panellerini ve tuş rehberlerini değiştirin. Modlarınız derlenirken CDKit değişen her paneli oyunun kendi arayüz biçimine derler.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF592;</span></div>
+            <h3>Doku araçları</h3>
+            <p>Dokuları toplu eşleştirin, yeniden renklendirilmiş varyantlar yapın, katmanları birleştirin, DDS ile PNG arasında dönüştürün ve eşya simgeleri oluşturun.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
@@ -298,13 +308,13 @@
         <div class="reveal">
           <span class="eyebrow">Güvenlik tasarımın parçası</span>
           <h2 class="serif">Oyununuz her zaman <span class="grad-text">geri yüklenebilir</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">Modlar oyunun kendi dosyalarından ayrı durur. CDKit'in küçük çalışma zamanı (cdkit.asi, bir ASI yükleyicisi tarafından yüklenir) oyun başlarken etkin modlarınızı derler ve oyun çalışırken onları oyuna gösterir – oyunun tek bir orijinal dosyası bile değiştirilmez. Mod yöneticisinde kapatılan bir mod bir sonraki başlatmada gider ve birden çok mod, her çakışma listelenerek kendi sıranızda birlikte yüklenir.</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">Modlar oyunun kendi dosyalarından ayrı durur. CDKit'in küçük çalışma zamanı (cdkit.asi, bir ASI yükleyicisi tarafından yüklenir) oyun başlarken etkin modlarınızı derler ve oyun çalışırken onları yalnızca bellekte oyuna ekler – oyunun tek bir orijinal dosyası bile değiştirilmez. Mod yöneticisinde kapatılan bir mod bir sonraki başlatmada gider ve birden çok mod, her çakışma listelenerek kendi sıranızda birlikte yüklenir.</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>Tahribatsız</h4>
-                <p>Modlar oyunun üzerine yüklenir. Onları mod yöneticisinden kapatın, bir sonraki başlatma oyunun dosyalarını kullanır.</p>
+                <p>Modlar oyunun üzerine yalnızca bellekte yüklenir. Onları mod yöneticisinden kapatın, bir sonraki başlatma oyunun dosyalarını kullanır.</p>
               </div>
             </div>
             <div class="pill">
@@ -365,7 +375,7 @@
           </details>
           <details>
             <summary>Oyunu veya kayıt dosyalarını bozabilir mi?</summary>
-            <p>Oyunun hiçbir orijinal dosyası değiştirilmez. Çalışma zamanı cdkit.asi (bin64'teki bir ASI yükleyicisi tarafından yüklenir) oyun başlarken bir yükleme ekranıyla etkin modlarınızı derler ve oyun çalışırken onları oyuna gösterir. Mod yöneticisindeki “Bu modu devre dışı bırak” veya “Tüm modları devre dışı bırak” onları kapatır ve bir sonraki başlatma oyunun kendi dosyalarını kullanır. Oyun modu kaydetmeyi engeller, böylece test ederken kayıtlarınız güvende kalır.</p>
+            <p>Oyunun hiçbir orijinal dosyası değiştirilmez. Çalışma zamanı cdkit.asi (bin64'teki bir ASI yükleyicisi tarafından yüklenir) oyun başlarken bir yükleme ekranıyla etkin modlarınızı derler ve oyun çalışırken onları yalnızca bellekte oyuna ekler. Mod yöneticisindeki “Bu modu devre dışı bırak” veya “Tüm modları devre dışı bırak” onları kapatır ve bir sonraki başlatma oyunun kendi dosyalarını kullanır. Oyun modu kaydetmeyi engeller, böylece test ederken kayıtlarınız güvende kalır.</p>
           </details>
           <details>
             <summary>Neye ihtiyacım var?</summary>
@@ -378,7 +388,7 @@
           </details>
           <details>
             <summary>Oyun güncellendiğinde ne olur?</summary>
-            <p>CDKit yeni oyun sürümünü fark eder ve hangi projeleri etkilediğini gösterir. Çalışma zamanı modlarınızı bir sonraki başlatmada güncellenmiş oyuna göre yeniden derler – yeniden kurulacak bir şey yoktur ve değişiklikleriniz neredeyse her durumda korunur.</p>
+            <p>CDKit yeni oyun sürümünü fark eder ve hangi projeleri etkilediğini gösterir. Çalışma zamanı modlarınızı bir sonraki başlatmada güncellenmiş oyuna göre yeniden derler – yeniden kurulacak bir şey yoktur ve değişiklikleriniz neredeyse her durumda korunur. Büyük bir güncelleme önce yeni bir CDKit sürümü gerektirebilir; sürüm notları desteklenen oyun sürümlerini belirtir.</p>
           </details>
           <details>
             <summary>Modlarımı paylaşabilir miyim?</summary>
@@ -387,6 +397,10 @@
           <details>
             <summary>Oyuncular modlarımı CDKit olmadan kullanabilir mi?</summary>
             <p>Evet. GitHub sürümlerinden CDKit Runtime'ı (cdkit.asi ve bir mods klasörü) indirir, oyun klasörüne açar, bir ASI yükleyicisi ekler ve .cdpkg dosyalarını bin64\CDKit\mods içine koyarlar.</p>
+          </details>
+          <details>
+            <summary>CDKit’i başka modlarla birlikte kullanabilir miyim?</summary>
+            <p>Evet, çoğu ASI modu yanında sorunsuz çalışır. Kendi dosyalarını yükleyen iki mod yükleyicisini aynı anda çalıştırmayın: aynı oyun işlevlerine kanca atarlar ve oyunun çökmesine neden olabilirler. bin64’te yalnızca birini tutun.</p>
           </details>
           <details>
             <summary>CDKit'i nereden indirebilirim?</summary>

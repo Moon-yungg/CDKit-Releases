@@ -226,13 +226,23 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF75D;</span></div>
             <h3>Toutes les données</h3>
-            <p>Toutes les tables de données du jeu, avec recherche, modifications en masse et aller-retour CSV via Excel ou Google Sheets.
+            <p>Toutes les tables de données du jeu, celles du DLC comprises, avec recherche, modifications en masse et aller-retour CSV via Excel ou Google Sheets.
             </p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF286;</span></div>
             <h3>Lettres et univers</h3>
             <p>Écrivez des lettres et parchemins que les joueurs peuvent ramasser et lire, puis placez-les où vous voulez dans le monde.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEE65;</span></div>
+            <h3>Mods d’interface</h3>
+            <p>Modifiez les menus, panneaux et aides de touches du jeu. CDKit compile chaque panneau modifié dans le format d’interface du jeu lors de la compilation de vos mods.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF592;</span></div>
+            <h3>Outils de textures</h3>
+            <p>Associez des textures en masse, créez des variantes de couleur, combinez des calques, convertissez DDS et PNG et créez des icônes d’objets.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
@@ -298,13 +308,13 @@
         <div class="reveal">
           <span class="eyebrow">La sécurité dès la conception</span>
           <h2 class="serif">Votre jeu reste <span class="grad-text">restaurable</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">Les mods restent séparés des fichiers du jeu. Le petit runtime de CDKit (cdkit.asi, chargé par un ASI loader) compile vos mods activés au lancement du jeu et les présente au jeu pendant qu’il tourne – aucun fichier d’origine du jeu n’est modifié. Un mod désactivé dans le gestionnaire de mods disparaît au prochain lancement, et plusieurs mods se chargent ensemble dans votre propre ordre, chaque conflit étant listé.</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">Les mods restent séparés des fichiers du jeu. Le petit runtime de CDKit (cdkit.asi, chargé par un ASI loader) compile vos mods activés au lancement du jeu et les ajoute au jeu, en mémoire uniquement, pendant qu’il tourne – aucun fichier d’origine du jeu n’est modifié. Un mod désactivé dans le gestionnaire de mods disparaît au prochain lancement, et plusieurs mods se chargent ensemble dans votre propre ordre, chaque conflit étant listé.</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>Non destructif</h4>
-                <p>Les mods se chargent par-dessus le jeu. Désactivez-les dans le gestionnaire de mods et le prochain lancement utilise les fichiers du jeu.</p>
+                <p>Les mods se chargent par-dessus le jeu, en mémoire uniquement. Désactivez-les dans le gestionnaire de mods et le prochain lancement utilise les fichiers du jeu.</p>
               </div>
             </div>
             <div class="pill">
@@ -365,7 +375,7 @@
           </details>
           <details>
             <summary>Peut-il endommager mon jeu ou mes sauvegardes ?</summary>
-            <p>Aucun fichier d’origine du jeu n’est modifié. Le runtime cdkit.asi (chargé par un ASI loader dans bin64) compile vos mods activés au lancement du jeu, avec un écran de chargement, et les présente au jeu pendant qu’il tourne. « Désactiver ce mod » ou « Désactiver tous les mods » dans le gestionnaire de mods les désactive, et le prochain lancement utilise les fichiers du jeu. Le mode jeu bloque la sauvegarde, vos sauvegardes restent donc intactes pendant les tests.</p>
+            <p>Aucun fichier d’origine du jeu n’est modifié. Le runtime cdkit.asi (chargé par un ASI loader dans bin64) compile vos mods activés au lancement du jeu, avec un écran de chargement, et les ajoute au jeu, en mémoire uniquement, pendant qu’il tourne. « Désactiver ce mod » ou « Désactiver tous les mods » dans le gestionnaire de mods les désactive, et le prochain lancement utilise les fichiers du jeu. Le mode jeu bloque la sauvegarde, vos sauvegardes restent donc intactes pendant les tests.</p>
           </details>
           <details>
             <summary>De quoi ai-je besoin ?</summary>
@@ -378,7 +388,7 @@
           </details>
           <details>
             <summary>Que se passe-t-il lors d’une mise à jour du jeu ?</summary>
-            <p>CDKit détecte la nouvelle version du jeu et indique les projets concernés. Le runtime recompile vos mods pour le jeu mis à jour au prochain lancement – rien à réinstaller, et vos modifications sont conservées dans presque tous les cas.</p>
+            <p>CDKit détecte la nouvelle version du jeu et indique les projets concernés. Le runtime recompile vos mods pour le jeu mis à jour au prochain lancement – rien à réinstaller, et vos modifications sont conservées dans presque tous les cas. Une mise à jour importante peut d’abord demander une nouvelle version de CDKit ; les notes de version indiquent les versions du jeu prises en charge.</p>
           </details>
           <details>
             <summary>Puis-je partager mes mods ?</summary>
@@ -387,6 +397,10 @@
           <details>
             <summary>Les joueurs peuvent-ils utiliser mes mods sans CDKit ?</summary>
             <p>Oui. Ils téléchargent CDKit Runtime (cdkit.asi et un dossier mods) depuis les versions GitHub, le décompressent dans le dossier du jeu, ajoutent un ASI loader et placent les fichiers .cdpkg dans bin64\CDKit\mods.</p>
+          </details>
+          <details>
+            <summary>Puis-je utiliser CDKit avec d’autres mods ?</summary>
+            <p>Oui, la plupart des mods ASI fonctionnent très bien à côté. N’utilisez pas en même temps deux chargeurs de mods qui chargent leurs propres fichiers : ils interceptent les mêmes fonctions du jeu et peuvent le faire planter. Gardez-en un seul dans bin64.</p>
           </details>
           <details>
             <summary>Où télécharger CDKit ?</summary>

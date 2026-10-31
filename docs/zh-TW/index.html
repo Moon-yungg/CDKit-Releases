@@ -226,13 +226,23 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF75D;</span></div>
             <h3>所有資料</h3>
-            <p>訪問游戲中的所有數據表，支持搜索、批量編輯，並可通過 CSV 與 Excel 或 Google Sheets 往返編輯。
+            <p>存取遊戲中的所有資料表（包括 DLC 資料表），支援搜尋、批次編輯，並可透過 CSV 與 Excel 或 Google Sheets 往返編輯。
             </p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF286;</span></div>
             <h3>書信與世界觀文本</h3>
             <p>編寫玩家可拾取閱讀的信件與捲軸，並把它們放置在世界中的任意位置。</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEE65;</span></div>
+            <h3>UI 模組</h3>
+            <p>修改遊戲的選單、面板和按鍵提示。建置模組時，CDKit 會把每個修改過的面板編譯成遊戲自己的 UI 格式。</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF592;</span></div>
+            <h3>紋理工具</h3>
+            <p>批次比對紋理、製作重新著色的變體、合併圖層、在 DDS 與 PNG 之間轉換，並建立物品圖示。</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
@@ -298,13 +308,13 @@
         <div class="reveal">
           <span class="eyebrow">從設計上確保安全</span>
           <h2 class="serif">你的遊戲始終 <span class="grad-text">可以還原</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">模組與遊戲本身的檔案保持分離。CDKit 的小型執行階段（cdkit.asi，由 ASI 載入器載入）在遊戲啟動時建置你啟用的模組，並在遊戲執行時把它們提供給遊戲——不會修改任何一個原始遊戲檔案。在模組管理器中關閉的模組會在下次啟動時消失，多個模組可以依你自己的順序同時載入，並列出每一處衝突。</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">模組與遊戲本身的檔案保持分離。CDKit 的小型執行階段（cdkit.asi，由 ASI 載入器載入）在遊戲啟動時建置你啟用的模組，並在遊戲執行時僅在記憶體中把它們加入遊戲——不會修改任何一個原始遊戲檔案。在模組管理器中關閉的模組會在下次啟動時消失，多個模組可以依你自己的順序同時載入，並列出每一處衝突。</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>非破壞式</h4>
-                <p>模組疊加在遊戲之上載入。在模組管理器中關閉它們，下次啟動時就會使用遊戲本身的檔案。</p>
+                <p>模組僅在記憶體中疊加在遊戲之上載入。在模組管理器中關閉它們，下次啟動時就會使用遊戲本身的檔案。</p>
               </div>
             </div>
             <div class="pill">
@@ -365,7 +375,7 @@
           </details>
           <details>
             <summary>它會損壞游戲或存檔嗎？</summary>
-            <p>不會修改任何原始遊戲檔案。執行階段 cdkit.asi（由 bin64 中的 ASI 載入器載入）會在遊戲啟動時建置你啟用的模組並顯示載入畫面，然後在遊戲執行時把它們提供給遊戲。在模組管理器中選擇「停用此模組」或「停用所有模組」即可關閉它們，下次啟動時就會使用遊戲本身的檔案。遊玩模式會阻擋存檔，測試期間你的存檔保持安全。</p>
+            <p>不會修改任何原始遊戲檔案。執行階段 cdkit.asi（由 bin64 中的 ASI 載入器載入）會在遊戲啟動時建置你啟用的模組並顯示載入畫面，然後在遊戲執行時僅在記憶體中把它們加入遊戲。在模組管理器中選擇「停用此模組」或「停用所有模組」即可關閉它們，下次啟動時就會使用遊戲本身的檔案。遊玩模式會阻擋存檔，測試期間你的存檔保持安全。</p>
           </details>
           <details>
             <summary>我需要什麼？</summary>
@@ -378,7 +388,7 @@
           </details>
           <details>
             <summary>游戲更新後會怎樣？</summary>
-            <p>CDKit 會察覺新的遊戲版本，並顯示受影響的專案。執行階段會在下次啟動時針對更新後的遊戲重新建置你的模組——無需重新安裝，你的修改幾乎在所有情況下都能保留。</p>
+            <p>CDKit 會察覺新的遊戲版本，並顯示受影響的專案。執行階段會在下次啟動時針對更新後的遊戲重新建置你的模組——無需重新安裝，你的修改幾乎在所有情況下都能保留。較大的更新可能需要先發布新的 CDKit 版本；發布說明會列出它支援的遊戲版本。</p>
           </details>
           <details>
             <summary>我可以分享自己的模組嗎？</summary>
@@ -387,6 +397,10 @@
           <details>
             <summary>玩家沒有 CDKit 也能使用我的模組嗎？</summary>
             <p>可以。他們從 GitHub 發佈頁下載 CDKit Runtime（cdkit.asi 和一個 mods 資料夾），解壓縮到遊戲資料夾，加上一個 ASI 載入器，再把 .cdpkg 檔案放進 bin64\CDKit\mods。</p>
+          </details>
+          <details>
+            <summary>可以把 CDKit 與其他模組一起使用嗎？</summary>
+            <p>可以，大多數 ASI 模組都能與它一起正常執行。不要同時執行兩個自行載入檔案的模組載入器：它們會掛鉤同一批遊戲函式，可能導致遊戲當機。bin64 中只保留其中一個。</p>
           </details>
           <details>
             <summary>在哪裡下載 CDKit？</summary>

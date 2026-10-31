@@ -226,13 +226,23 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF75D;</span></div>
             <h3>全部数据</h3>
-            <p>访问游戏中的所有数据表，支持搜索、批量编辑，并可通过 CSV 与 Excel 或 Google Sheets 往返编辑。
+            <p>访问游戏中的所有数据表（包括 DLC 数据表），支持搜索、批量编辑，并可通过 CSV 与 Excel 或 Google Sheets 往返编辑。
             </p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF286;</span></div>
             <h3>书信与世界观文本</h3>
             <p>编写玩家可拾取阅读的信件与卷轴，并把它们放置在世界中的任意位置。</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEE65;</span></div>
+            <h3>UI 模组</h3>
+            <p>修改游戏的菜单、面板和按键提示。构建模组时，CDKit 会把每个修改过的面板编译成游戏自己的 UI 格式。</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF592;</span></div>
+            <h3>纹理工具</h3>
+            <p>批量匹配纹理、制作重新着色的变体、合并图层、在 DDS 与 PNG 之间转换，并创建物品图标。</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
@@ -298,13 +308,13 @@
         <div class="reveal">
           <span class="eyebrow">从设计上保证安全</span>
           <h2 class="serif">你的游戏始终 <span class="grad-text">可以还原</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">模组与游戏自身的文件保持分离。CDKit 的小型运行时（cdkit.asi，由 ASI 加载器加载）在游戏启动时构建你启用的模组，并在游戏运行时把它们提供给游戏——不会修改任何一个原始游戏文件。在模组管理器中关闭的模组会在下次启动时消失，多个模组可以按你自己的顺序同时加载，并列出每一处冲突。</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">模组与游戏自身的文件保持分离。CDKit 的小型运行时（cdkit.asi，由 ASI 加载器加载）在游戏启动时构建你启用的模组，并在游戏运行时仅在内存中把它们加入游戏——不会修改任何一个原始游戏文件。在模组管理器中关闭的模组会在下次启动时消失，多个模组可以按你自己的顺序同时加载，并列出每一处冲突。</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>非破坏式</h4>
-                <p>模组叠加在游戏之上加载。在模组管理器中关闭它们，下次启动时就会使用游戏自身的文件。</p>
+                <p>模组仅在内存中叠加在游戏之上加载。在模组管理器中关闭它们，下次启动时就会使用游戏自身的文件。</p>
               </div>
             </div>
             <div class="pill">
@@ -365,7 +375,7 @@
           </details>
           <details>
             <summary>它会损坏游戏或存档吗？</summary>
-            <p>不会修改任何原始游戏文件。运行时 cdkit.asi（由 bin64 中的 ASI 加载器加载）会在游戏启动时构建你启用的模组并显示加载画面，然后在游戏运行时把它们提供给游戏。在模组管理器中选择“禁用此模组”或“禁用所有模组”即可关闭它们，下次启动时就会使用游戏自身的文件。游玩模式会阻止存档，测试期间你的存档保持安全。</p>
+            <p>不会修改任何原始游戏文件。运行时 cdkit.asi（由 bin64 中的 ASI 加载器加载）会在游戏启动时构建你启用的模组并显示加载画面，然后在游戏运行时仅在内存中把它们加入游戏。在模组管理器中选择“禁用此模组”或“禁用所有模组”即可关闭它们，下次启动时就会使用游戏自身的文件。游玩模式会阻止存档，测试期间你的存档保持安全。</p>
           </details>
           <details>
             <summary>我需要什么？</summary>
@@ -378,7 +388,7 @@
           </details>
           <details>
             <summary>游戏更新后会怎样？</summary>
-            <p>CDKit 会察觉新的游戏版本，并显示受影响的项目。运行时会在下次启动时针对更新后的游戏重新构建你的模组——无需重新安装，你的修改几乎在所有情况下都能保留。</p>
+            <p>CDKit 会察觉新的游戏版本，并显示受影响的项目。运行时会在下次启动时针对更新后的游戏重新构建你的模组——无需重新安装，你的修改几乎在所有情况下都能保留。较大的更新可能需要先发布新的 CDKit 版本；发布说明会列出它支持的游戏版本。</p>
           </details>
           <details>
             <summary>我可以分享自己的模组吗？</summary>
@@ -387,6 +397,10 @@
           <details>
             <summary>玩家没有 CDKit 也能使用我的模组吗？</summary>
             <p>可以。他们从 GitHub 发布页下载 CDKit Runtime（cdkit.asi 和一个 mods 文件夹），解压到游戏文件夹，加上一个 ASI 加载器，再把 .cdpkg 文件放进 bin64\CDKit\mods。</p>
+          </details>
+          <details>
+            <summary>可以把 CDKit 与其他模组一起使用吗？</summary>
+            <p>可以，大多数 ASI 模组都能与它一起正常运行。不要同时运行两个自行加载文件的模组加载器：它们会挂钩同一批游戏函数，可能导致游戏崩溃。bin64 中只保留其中一个。</p>
           </details>
           <details>
             <summary>在哪里下载 CDKit？</summary>

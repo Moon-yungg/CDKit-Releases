@@ -497,6 +497,11 @@
       font-size: 15px;
     }
 
+    /* wide card + 11 cards: the last one fills the fourth row */
+    .features .card:last-child {
+      grid-column: span 3;
+    }
+
     .card.wide {
       grid-column: span 2;
       display: grid;

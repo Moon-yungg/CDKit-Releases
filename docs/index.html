@@ -242,13 +242,23 @@
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF75D;</span></div>
             <h3>All the data</h3>
-            <p>Every data table of the game, with search, bulk edits and CSV round trips through Excel or Google Sheets.
+            <p>Every data table of the game, DLC tables included, with search, bulk edits and CSV round trips through Excel or Google Sheets.
             </p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF286;</span></div>
             <h3>Letters &amp; lore</h3>
             <p>Write letters and scrolls players can pick up and read, and place them anywhere in the world.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEE65;</span></div>
+            <h3>UI mods</h3>
+            <p>Change the game's menus, panels and key guides. CDKit compiles every changed panel into the game's own UI format when your mods are built.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xF592;</span></div>
+            <h3>Texture tools</h3>
+            <p>Match textures in bulk, make recolour variants, combine layers, convert DDS and PNG, and create item icons.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xE7DA;</span></div>
@@ -314,13 +324,13 @@
         <div class="reveal">
           <span class="eyebrow">Safe by design</span>
           <h2 class="serif">Your game stays <span class="grad-text">restorable</span></h2>
-          <p style="color:var(--muted);font-size:18px;margin:0">Mods stay separate from the game's own files. CDKit's small runtime (cdkit.asi, loaded by an ASI loader) builds your enabled mods when the game starts and shows them to the game while it runs – not a single original game file is changed. A mod switched off in the mod manager is gone at the next start, and several mods load together in your own order with every conflict listed.</p>
+          <p style="color:var(--muted);font-size:18px;margin:0">Mods stay separate from the game's own files. CDKit's small runtime (cdkit.asi, loaded by an ASI loader) builds your enabled mods when the game starts and adds them to the game in memory while it runs – not a single original game file is changed. A mod switched off in the mod manager is gone at the next start, and several mods load together in your own order with every conflict listed.</p>
           <div class="pill-list">
             <div class="pill">
               <div class="icon"><span class="fluent-icon" aria-hidden="true">&#xEAC8;</span></div>
               <div>
                 <h4>Non-destructive</h4>
-                <p>Mods load on top of the game. Switch them off in the mod manager and the next start uses the game's files.</p>
+                <p>Mods load on top of the game, in memory only. Switch them off in the mod manager and the next start uses the game's files.</p>
               </div>
             </div>
             <div class="pill">
@@ -381,7 +391,7 @@
           </details>
           <details>
             <summary>Will it break my game or my save games?</summary>
-            <p>No original game file is changed. The runtime cdkit.asi (loaded by an ASI loader in bin64) builds your enabled mods at game start, with a loading screen, and shows them to the game while it runs. “Disable this mod” or “Disable all mods” in the mod manager switches them off, and the next start uses the game's own files. Play mode blocks saving, so your saves stay safe while testing.</p>
+            <p>No original game file is changed. The runtime cdkit.asi (loaded by an ASI loader in bin64) builds your enabled mods at game start, with a loading screen, and adds them to the game in memory while it runs. “Disable this mod” or “Disable all mods” in the mod manager switches them off, and the next start uses the game's own files. Play mode blocks saving, so your saves stay safe while testing.</p>
           </details>
           <details>
             <summary>What do I need?</summary>
@@ -394,7 +404,7 @@
           </details>
           <details>
             <summary>What happens when the game gets an update?</summary>
-            <p>CDKit notices the new game version and shows which projects it affects. The runtime rebuilds your mods against the updated game at the next start – there is nothing to reinstall, and your changes carry over in almost all cases.</p>
+            <p>CDKit notices the new game version and shows which projects it affects. The runtime rebuilds your mods against the updated game at the next start – there is nothing to reinstall, and your changes carry over in almost all cases. A bigger update can need a new CDKit release first; the release notes name the game versions it supports.</p>
           </details>
           <details>
             <summary>Can I share my mods?</summary>
@@ -403,6 +413,10 @@
           <details>
             <summary>Can players use my mods without CDKit?</summary>
             <p>Yes. They download CDKit Runtime (cdkit.asi and a mods folder) from the GitHub releases, unzip it into the game folder, add an ASI loader and put the .cdpkg files into bin64\CDKit\mods.</p>
+          </details>
+          <details>
+            <summary>Can I use CDKit next to other mods?</summary>
+            <p>Yes, most ASI mods run fine next to it. Do not run two mod loaders that load files of their own at the same time: they hook the same game functions and can crash the game. Keep only one of them in bin64.</p>
           </details>
           <details>
             <summary>Where do I download CDKit?</summary>
